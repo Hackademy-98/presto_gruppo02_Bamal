@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
 
 class FormProducts extends Component
 {
@@ -14,20 +15,22 @@ class FormProducts extends Component
     public $category;
     public $condition;
     public $price;
+
+    public $categories;
     
-    public $rules = [
-        "img"=>'image',
+    protected $rules = [
+        // "img"=>'image',
         "name"=>'required|min:5',
-        "description"=>'required|min:10|text|max:255',
-        "category"=>'required',
+        "description"=>'required|min:10|max:255',
+        //  "category"=>'required',
         "condition"=>'required',
         "price"=>'required|decimal:0,2',
 
     ];
 
-    public $messages = [
+     protected $messages = [
         "required"=>"Il campo :attribute è necessario",
-        "min"=>"Il campo :attribute ha un numero insufficiente di caratteri",
+       "min"=>"Il campo :attribute ha un numero insufficiente di caratteri",
         "max"=>"Il campo :attribute deve contenere massimo 255 caratteri",
         
         
@@ -35,11 +38,12 @@ class FormProducts extends Component
 
     public function store(){
         $this->validate();
+        
         Product::create([
             'img'=>$this->img ? $this->img->store('public/images'):'public/images/default.png',
             'name'=>$this->name,
             'description'=>$this->description,
-            'category'=>$this->category,
+            'category_id'=>$this->category,
             'condition'=>$this->condition,
             'price'=>$this->price
         ]);
@@ -51,6 +55,7 @@ class FormProducts extends Component
 
     public function render()
     {
+       $this->categories= Category::all();
         return view('livewire.form-products');
     }
 }
