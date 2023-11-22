@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//!Route per la visualizzazione della pagina home
+Route::get('/', [PublicController::class, 'home'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
