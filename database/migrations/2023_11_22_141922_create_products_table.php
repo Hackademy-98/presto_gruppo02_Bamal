@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('img');
             $table->string('name');
             $table->text('description');
-            $table->string('condition');
             $table->decimal('price');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

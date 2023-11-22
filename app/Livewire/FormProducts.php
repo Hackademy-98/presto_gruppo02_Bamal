@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Models\Condition;
 use Illuminate\Support\Facades\Auth;
 
 class FormProducts extends Component
@@ -18,6 +19,7 @@ class FormProducts extends Component
     public $price;
 
     public $categories;
+    public $conditions;
     
     protected $rules = [
         // "img"=>'image',
@@ -39,17 +41,21 @@ class FormProducts extends Component
 
     public function store(){
         $this->validate();
-        if(Auth::user()){
-        $category = Category::find($this->category);
-        $category->products()->create([
-            'img'=>$this->img ? $this->img->store('public/images'):'public/images/default.png',
-            'name'=>$this->name,
-            'description'=>$this->description,
-            'user_id'=>Auth::user()->id,
-            'condition'=>$this->condition,
-            'price'=>$this->price
+        if(Auth::user()){   
+        $category = Category::find($this->category);   
+        $condition = Condition::find($this->condition);
+
+        $product = $category->products()->create([
+        'img' => $this->img ? $this->img->store('public/images') : 'public/images/default.png',     
+        'name' => $this->name,
+        'description' => $this->description,
+        'user_id' => Auth::user()->id,     
+        'price' => $this->price,
         ]);
         
+        $condition->products()->save($product);
+        
+
         $this->reset();
         session()->flash('success', 'Annuncio creato con successo');
     }else{
@@ -60,7 +66,8 @@ class FormProducts extends Component
 
     public function render()
     {
-       $this->categories= Category::all();
+        $this->categories= Category::all();
+        $this->conditions= Condition::all();
         return view('livewire.form-products');
     }
 }
