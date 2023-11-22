@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,8 @@ use App\Http\Controllers\PublicController;
 */
 //!Route per la visualizzazione della pagina home
 Route::get('/', [PublicController::class, 'home'])->name('home');
+
+
+
 
 
