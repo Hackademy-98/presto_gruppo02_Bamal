@@ -20,9 +20,14 @@ return new class extends Migration
             $table->string('condition');
             $table->decimal('price');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('category_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->timestamps();
+
+            
+        
         });
+        
     }
 
     /**
