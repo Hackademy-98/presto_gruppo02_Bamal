@@ -25,7 +25,7 @@ return new class extends Migration
         ];
         foreach($categories as $category){
             Category::create([
-                "name"=>$category,
+                "name"=>$category
             ]);
         }
     }

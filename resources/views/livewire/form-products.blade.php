@@ -37,9 +37,9 @@
                             @error ('description'){{$message}} @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="category_id" class="form-label">Categoria</label>
-                            <select class="form-select" aria-label="Default select example" name="category_id" wire:model='category_id' id="category_id">
-                                <option disabled selected>Seleziona Categoria</option>
+                            <label for="category" class="form-label">Categoria</label>
+                            <select class="form-select" aria-label="Default select example" name="category" wire:model.defer='category' id="category">
+                                <option>Seleziona Categoria</option>
                                 @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
@@ -62,5 +62,4 @@
             </div>
         </div>
     </div>
-    {{-- The whole world belongs to you. --}}
 </div>

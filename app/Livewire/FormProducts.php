@@ -13,7 +13,7 @@ class FormProducts extends Component
     public $img;
     public $name;
     public $description;
-    public $category_id;
+    public $category;
     public $condition;
     public $price;
 
@@ -23,7 +23,7 @@ class FormProducts extends Component
         // "img"=>'image',
         "name"=>'required|min:5',
         "description"=>'required|min:10|max:255',
-        //  "category"=>'required',
+        "category"=>'required',
         "condition"=>'required',
         "price"=>'required|decimal:0,2',
 
@@ -40,22 +40,23 @@ class FormProducts extends Component
     public function store(){
         $this->validate();
         if(Auth::user()){
-        Product::create([
+        $category = Category::find($this->category);
+        $category->products()->create([
             'img'=>$this->img ? $this->img->store('public/images'):'public/images/default.png',
             'name'=>$this->name,
             'description'=>$this->description,
-            'category_id'=>$this->category_id,
             'user_id'=>Auth::user()->id,
             'condition'=>$this->condition,
             'price'=>$this->price
         ]);
-
+        
         $this->reset();
         session()->flash('success', 'Annuncio creato con successo');
     }else{
         session()->flash('error', 'Non sei autorizzato');
-    }}
-    
+    }
+        
+    }
 
     public function render()
     {
