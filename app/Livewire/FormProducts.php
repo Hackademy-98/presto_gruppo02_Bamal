@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class FormProducts extends Component
 {
@@ -12,7 +13,7 @@ class FormProducts extends Component
     public $img;
     public $name;
     public $description;
-    public $category;
+    public $category_id;
     public $condition;
     public $price;
 
@@ -38,19 +39,22 @@ class FormProducts extends Component
 
     public function store(){
         $this->validate();
-        
+        if(Auth::user()){
         Product::create([
             'img'=>$this->img ? $this->img->store('public/images'):'public/images/default.png',
             'name'=>$this->name,
             'description'=>$this->description,
-            'category_id'=>$this->category,
+            'category_id'=>$this->category_id,
+            'user_id'=>Auth::user()->id,
             'condition'=>$this->condition,
             'price'=>$this->price
         ]);
 
         $this->reset();
         session()->flash('success', 'Annuncio creato con successo');
-    }
+    }else{
+        session()->flash('error', 'Non sei autorizzato');
+    }}
     
 
     public function render()

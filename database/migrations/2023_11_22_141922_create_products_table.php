@@ -16,11 +16,13 @@ return new class extends Migration
             $table->string('img');
             $table->string('name');
             $table->text('description');
-            $table->string('category');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->string('condition');
             $table->decimal('price');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            
             
             $table->timestamps();
 

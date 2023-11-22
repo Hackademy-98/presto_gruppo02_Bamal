@@ -1,13 +1,22 @@
+<div>
+
+
 <div class="container">
     <div class="row">
         <div class="col-12">
             @if (session('success'))
-                <div class="col-12 alert alert-success">
+                <div class=" alert alert-success">
                     {{session('success')}}
                 </div>
+                @elseif (session('error'))
+                    <div class=" alert alert-danger">
+                        {{session('error')}}
+                    </div>
             @endif
-            
-            
+        </div>
+    </div>
+</div>
+            <div class="container">
             <div class="row">
                 <div class="col-12">
                  
@@ -28,8 +37,8 @@
                             @error ('description'){{$message}} @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Categoria</label>
-                            <select class="form-select" aria-label="Default select example" name="category" wire:model='category'>
+                            <label for="category_id" class="form-label">Categoria</label>
+                            <select class="form-select" aria-label="Default select example" name="category_id" wire:model='category_id' id="category_id">
                                 <option disabled selected>Seleziona Categoria</option>
                                 @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
