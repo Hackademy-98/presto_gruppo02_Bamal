@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container d-flex">
+    <div class="container d-flex ">
         <div class="row w-50 h-50 pt-5">
             <div class="col-12 col-md-6">
                 <h2 class="text-center mt-5 pt-2">Informazioni sul prodotto</h2>
