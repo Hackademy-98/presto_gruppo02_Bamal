@@ -1,4 +1,63 @@
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@200;300;400;500;600;700&display=swap');
+
+
+/* IMPOSTAZIONI GENERALI */
+:root {
+    --b: #263460;
+    --o: #ff1d1d;
+    --n: #ececec;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Saira', sans-serif;
+    color: #263460;
+}
+/* TESTI */
+.t-b {
+    color: var(--b) !important;
+}
+.t-o {
+    color: var(--o) !important;
+}
+.t-n {
+    color: var(--n) !important;
+}
+/* SFONDI */
+.bg-b{
+    background-color: var(--b) !important;
+}
+.bg-o{
+    background-color: var(--o) !important;
+}
+.bg-n{
+    background-color: var(--n) !important;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 14vh;
+}
+
+.headerHome {
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+}
+
+/* NAVBAR */
+.nav-link{
+    color: var(--n);
+}
+.nav-link:hover{
+    color: var(--o);
+}
+.homeLink {
+    color: var(--o) !important;
+}
 
 .card {
     width: 250px;
@@ -63,4 +122,9 @@
 .card-button:hover {
     border: 1px solid #ffcaa6;
     background-color: #ffcaa6;
+}
+/* CAROSELLO */
+.carousel-custom {
+    width: 40vw;
+    height: 5vh !important;
 }

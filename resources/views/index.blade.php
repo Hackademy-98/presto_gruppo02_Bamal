@@ -1,9 +1,10 @@
 <x-layout>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+    <div class="container">
+        <div class="row justify-content-center pt-5">
+            <h2 class="text-center mt-5 pt-2">I tuoi annunci</h2>
             @foreach ($products as $product)
             
-            <div class="col-3">
+            <div class="col-3 mt-5 d-flex flex-col justify-content-center">
                 <div class="card">
                     <div class="card-img"></div>
                     <div class="card-info">

@@ -1,7 +1,7 @@
 <x-layout>
 
     <div class="container">
-        <div class="row">
+        <div class="row pt-5">
             <div class="col-12">
                 <form action="{{ route('register') }}" method="POST">
                     @csrf

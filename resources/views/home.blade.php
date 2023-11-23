@@ -1,19 +1,27 @@
 <x-layout>
 
-<header class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <h1>Lorem ipsum dolor sit amet consectetur</h1>
-            <a class="btn btn-primary" href="{{route('products.create')}}">Inserisci annuncio</a>
+<header class="container-fluid headerHome d-flex align-items-center justify-content-center">    
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">          
+                <h1 class="t-b m-0"> PRESTO                  
+                </h1>
+            <h2>Lorem ipsum dolor sit amet consectetur</h2>
+            <a class="btn fs-5 t-n  mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
         </div>
     </div>
 </header>
-<div class="container-fluid">
+
+
+
+
+
+<div class="container">
     <div class="row justify-content-center">
+        <h2 class="text-center mb-5">Ultimi annunci</h2>
         @foreach ($products as $product)
         
-        <div class="col-3">
-            <div class="card">
+        <div class="col-12 col-md-6 col-lg-3 d-flex flex-col align-items-center justify-content-center">
+            <div class="card justify-content-center mt-4">
                 <div class="card-img"></div>
                 <div class="card-info">
                     <p class="text-title">{{ $product->name }}</p>

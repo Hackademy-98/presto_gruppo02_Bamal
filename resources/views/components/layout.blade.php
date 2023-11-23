@@ -6,7 +6,7 @@
     <title>Home</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
   </head>
-  <body>
+  <body class=" bg-light">
     <x-navbar />
     
     {{ $slot }}

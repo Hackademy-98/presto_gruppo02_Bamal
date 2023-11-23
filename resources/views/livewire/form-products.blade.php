@@ -2,8 +2,8 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-12">
+    <div class="row pt-5 ">
+        <div class="col-12 pt-5">
             @if (session('success'))
                 <div class=" alert alert-success">
                     {{session('success')}}
