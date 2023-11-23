@@ -23,6 +23,8 @@ Route::get('/annuncio/dettaglio/{product}',[ProductController::class,'show'])->n
 
 Route::get('/annuncio/categoria/{category}', [ProductController::class,'filterByCategory'])->name('products.filterByCategory');
 
+Route::get('/annunci', [ProductController::class, 'index'])->name('index');
+
 
 
 

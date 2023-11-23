@@ -3,7 +3,6 @@
 <div class="container">
     <div class="row">
         @foreach ($category->products as $product)
-           
         <div class="col-3">
         <div class="card">
             <div class="card-img"></div>
