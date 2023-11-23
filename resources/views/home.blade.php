@@ -15,9 +15,10 @@
         <div class="col-4">
             <div class="card">
                 <div class="image"><span class="text">This is a chair.</span></div>
-                <span class="title">Cool Chair</span>
-                <p>lorem</p>
-                <span class="price">$100</span>
+                <span class="title">{{$product->name}} </span>
+                
+                <a href="">{{$product->category_id->name}} </a>
+                <span class="price">{{$product->price}}</span>
             </div>
         </div>
         
