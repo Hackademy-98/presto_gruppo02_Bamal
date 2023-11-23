@@ -16,9 +16,9 @@
             <div class="card">
                 <div class="image"><span class="text">This is a chair.</span></div>
                 <span class="title">{{$product->name}} </span>
-                
-                <a href="">{{$product->category_id->name}} </a>
+                <a href="">{{$product->category->name}}</a>
                 <span class="price">{{$product->price}}</span>
+                
             </div>
         </div>
         
