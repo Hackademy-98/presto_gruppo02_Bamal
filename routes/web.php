@@ -19,9 +19,9 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 
 Route::get('/annuncio/crea',[ProductController::class,'create'])->name('products.create');
 
-Route::get('/annuncio/dettaglio/{annuncio}',[ProductController::class,'show'])->name('products.show');
+Route::get('/annuncio/dettaglio/{product}',[ProductController::class,'show'])->name('products.show');
 
-
+Route::get('/annuncio/categoria/{category}', [ProductController::class,'filterByCategory'])->name('products.filterByCategory');
 
 
 

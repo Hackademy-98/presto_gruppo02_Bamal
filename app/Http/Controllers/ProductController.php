@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -39,6 +40,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+
         return view('products.detail', compact('product'));
     }
 
@@ -64,5 +66,9 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function filterByCategory(Category $category){
+        return view('products.filterByCategory', compact('category'));
     }
 }
