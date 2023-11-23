@@ -11,16 +11,22 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         @foreach ($products as $product)
-            
+           
         <div class="col-4">
-            <div class="card">
-                <div class="image"><span class="text">This is a chair.</span></div>
-                <span class="title">{{$product->name}} </span>
-                
-                <a href="">{{$product->category_id->name}} </a>
-                <span class="price">{{$product->price}}</span>
+        <div class="card">
+            <div class="card-img"></div>
+            <div class="card-info">
+              <p class="text-title">{{ $product->name }}</p>
+              <p class="text-body" ><a href="">{{ $product->category->name }}</a></p>
             </div>
+            <div class="card-footer">
+            <span class="text-title">{{ $product->price }}</span>
+            <div class="card-button">
+              <a class="text-decoration-none" href="">dettaglio</a>
+            </div>
+          </div>
         </div>
+    </div>
         
         @endforeach
     </div>
