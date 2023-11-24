@@ -3,8 +3,7 @@
 <header class="container-fluid headerHome d-flex align-items-center justify-content-center">    
     <div class="row justify-content-center">
         <div class="col-12 text-center">          
-                <h1 class="t-b m-0"> PRESTO                  
-                </h1>
+                <h1 class="t-b m-0 h1-home">PRESTO</h1>
             <h2>Lorem ipsum dolor sit amet consectetur</h2>
             <a class="btn fs-5 t-n  mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
         </div>

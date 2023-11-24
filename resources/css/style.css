@@ -1,20 +1,18 @@
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Saira:wght@200;300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@200;300;400;500;600;700&display=swap");
 
 /* IMPOSTAZIONI GENERALI */
 :root {
     --b: #263460;
     --o: #ff1d1d;
     --n: #ececec;
-    
 }
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Saira', sans-serif;
+    font-family: "Saira", sans-serif;
     color: #263460;
 }
 /* TESTI */
@@ -28,18 +26,18 @@
     color: var(--n) !important;
 }
 /* SFONDI */
-.bg-b{
+.bg-b {
     background-color: var(--b) !important;
 }
-.bg-o{
+.bg-o {
     background-color: var(--o) !important;
 }
-.bg-n{
+.bg-n {
     background-color: var(--n) !important;
 }
 
-h1 {
-    font-family: 'Russo One', sans-serif;
+h1-home {
+    font-family: "Russo One", sans-serif;
     font-size: 14vh;
 }
 
@@ -49,10 +47,10 @@ h1 {
 }
 
 /* NAVBAR */
-.nav-link{
+.nav-link {
     color: var(--n);
 }
-.nav-link:hover{
+.nav-link:hover {
     color: var(--o);
 }
 .homeLink {
@@ -123,19 +121,19 @@ h1 {
     border: 1px solid #ffcaa6;
     background-color: #ffcaa6;
 }
-/* CAROSELLO */
-/* .carousel-custom {
-    width: 40vw;
-    height: 20vh !important;
-} */
 
-/* .prova{
-    align-items: center;
-    margin-top: 300px;
-    
-} */
+.detail-container {
+    margin-top: 56px;
+}
 
-/* .imgCarosello{
-    width: 500;
-    height:300;
-} */
+.carousel-col {
+    max-height: 30rem;
+    /* min-height: 15rem; */
+}
+
+@media (min-width: 768px) {
+    .col-md-5 {
+        max-width: 45rem;
+        min-width: 35rem;
+    }
+}

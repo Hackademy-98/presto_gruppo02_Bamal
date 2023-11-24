@@ -1,52 +1,69 @@
 <x-layout>
-    <div class="container d-flex align-items-center">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6">
-                <h2 class="text-center mt-5 pt-2">Informazioni sul prodotto</h2>
-                <div class="card pt-5 mt-5 ">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$product->name}}</h5>
-                        <p>{{$product->category->name}}</p>
-                        <p class="card-text">{{$product->condition->name}}</p>
-                        <p class="card-text">{{$product->description}}</p>
-                    </div>
-                </div>
-                
-            </div>
-
-
-            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                <div id="carouselExampleIndicators" class="carousel slide carousel-custom ">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/media/prova.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+    <div class="container-fluid d-flex align-items-center justify-content-center detail-container">
+        <div class="row h-50 justify-content-center">
+          <h2 class="text-center my-5 fs-1">INFO articolo</h2>
+          {{-- <div class="col-12 col-md-6">
+              <h2 class="text-center mt-5 pt-2">Informazioni sul prodotto</h2>
+              <div class="card pt-5 mt-5 ">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">{{$product->name}}</h5>
+                      <p>{{$product->category->name}}</p>
+                      <p class="card-text">{{$product->condition->name}}</p>
+                      <p class="card-text">{{$product->description}}</p>
                   </div>
+              </div>  
+          </div> --}}
+          <div class="col-12 col-md-5 d-flex mt-5">
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/media/prova.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/media/prova.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="/media/prova.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
           </div>
 
+          <div class="col-12 col-md-3 col-lg-3 d-flex flex-column mt-5 carousel-col justify-content-between">
+                  <div>
+                    <p class="fs-4 text-uppercase">{{$product->category->name}}</p>
+                    <hr>
+                    <p>Creato il: {{ $product->created_at->format('d/m/Y') }}</p>
+                      <h3 class="fw-semibold fs-2">{{$product->name}}</h3>
+                    </div>
+                  <div>
+                      <p class="fw-semibold fs-3 text-dark">{{$product->price}} €</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-5">
+                <h2 class="mt-5 mb-4">Dati principali</h2>
+                <div class="d-flex gap-5">
+                  <p>Condizione:</p>
+                  <p>{{$product->condition->name}}</p>
+                </div>
+                <hr>
+                <h2 class="mt-5 mb-4">Descrizione</h2>
+                <p>{{$product->description}}</p>
+              </div>
+              <div class="col-12 col-md-3"></div> 
+              
+          </div>
         </div>
-    </div>
+
     
     
 </x-layout>
