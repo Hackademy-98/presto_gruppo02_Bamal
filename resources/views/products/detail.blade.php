@@ -2,7 +2,7 @@
     <div class="container-fluid d-flex align-items-center justify-content-center detail-container">
         <div class="row h-50 justify-content-center">
           <h2 class="text-center my-5 fs-1">INFO articolo</h2>
-          <div class="col-2"></div>
+          <div class="col-2 col-md-1"></div>
           <div class="col-12 col-md-5 d-flex mt-5">
             <div id="carouselExample" class="carousel slide">
               <div class="carousel-inner">
@@ -38,7 +38,7 @@
                       <p class="fw-semibold fs-3 t-o">{{$product->price}} €</p>
                 </div>
               </div>
-              <div class="col-2"></div>
+              <div class="col-2 col-md-1"></div>
               <div class="col-12 col-md-5">
                 <h2 class="mt-5 mb-4">Dati principali</h2>
                 <div class="d-flex gap-5">
