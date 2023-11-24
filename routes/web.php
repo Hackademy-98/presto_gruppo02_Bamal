@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ProductController;
 
@@ -27,7 +28,7 @@ Route::get('/annunci', [ProductController::class, 'index'])->name('index');
 
 
 //Rotta Dashboard
-
+Route::get('/dashboard', [UserController::class, 'home'])->name('auth.dashboard');
 
 
 

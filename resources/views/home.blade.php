@@ -5,7 +5,7 @@
         <div class="col-12 text-center">          
                 <h1 class="t-b m-0 h1-home">PRESTO</h1>
             <h2>Lorem ipsum dolor sit amet consectetur</h2>
-            <a class="btn fs-5 t-n  mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
+            <a class="btn fs-5 text-white  mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
         </div>
     </div>
 </header>
@@ -15,11 +15,11 @@
 
 
 <div class="container">
-    <div class="row justify-content-center">
-        <h2 class="text-center mb-5">Ultimi annunci</h2>
+    <div class="row justify-content-center mb-5">
+        <h2 class="text-center mb-3">Ultimi annunci</h2>
         @foreach ($products as $product)
-        
-        <div class="col-12 col-md-6 col-lg-3 d-flex flex-col align-items-center justify-content-center">
+        <x-card :product='$product'/>
+        {{-- <div class="col-12 col-md-6 col-lg-3 d-flex flex-col align-items-center justify-content-center">
             <div class="card justify-content-center mt-4">
                 <div class="card-img"></div>
                 <div class="card-info">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
         @endforeach
     </div>
