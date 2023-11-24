@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid d-flex align-items-center justify-content-center detail-container">
         <div class="row h-50 justify-content-center">
-          <h2 class="text-center my-5 fs-1">INFO articolo</h2>
+          <h2 class="text-center my-5 pt-5 fs-1">INFO articolo</h2>
           <div class="col-2 col-md-1"></div>
           <div class="col-12 col-md-5 d-flex mt-5">
             <div id="carouselExample" class="carousel slide">

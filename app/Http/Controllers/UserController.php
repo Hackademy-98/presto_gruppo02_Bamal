@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function home(){
-        return view('auth.dashboard');
+        $products = Auth::User()->products;
+        return view('auth.dashboard', compact('products'));
     }
 }
