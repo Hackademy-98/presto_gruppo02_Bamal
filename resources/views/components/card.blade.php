@@ -7,7 +7,11 @@
           
           <p class="text-body" ><a class="text-decoration-none cardLink t-b fs-5" href="{{route('products.filterByCategory',['category'=>$product->category])}}">{{ $product->category->name }}</a></p>
           <p class="text-title fs-6">€{{ $product->price }}</p>
+<<<<<<< HEAD
           <a href="{{ route('products.show', compact('product')) }}" class="btn bg-b rounded-5 t-n">Dettaglio</a>
+=======
+          <a href="{{route('products.show', compact('product'))}}" class="btn bg-b rounded-5 t-n">Detail</a>
+>>>>>>> 6841ebb9b5f2f8950833df99660f926e0ca7567c
         </div>
       </div>
 </div>

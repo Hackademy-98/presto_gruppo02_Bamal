@@ -16,6 +16,7 @@
                         <a class="nav-link" href="{{ route('index') }}">Annunci</a>
                     </li>
                 </ul>
+                
                 @guest
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
