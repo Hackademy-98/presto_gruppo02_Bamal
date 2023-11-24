@@ -31,4 +31,6 @@ Route::get('/annunci', [ProductController::class, 'index'])->name('index');
 Route::get('/dashboard', [UserController::class, 'home'])->name('auth.dashboard');
 
 
+//Rotta Dettaglio
+
 
