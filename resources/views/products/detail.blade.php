@@ -2,18 +2,7 @@
     <div class="container-fluid d-flex align-items-center justify-content-center detail-container">
         <div class="row h-50 justify-content-center">
           <h2 class="text-center my-5 fs-1">INFO articolo</h2>
-          {{-- <div class="col-12 col-md-6">
-              <h2 class="text-center mt-5 pt-2">Informazioni sul prodotto</h2>
-              <div class="card pt-5 mt-5 ">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                      <h5 class="card-title">{{$product->name}}</h5>
-                      <p>{{$product->category->name}}</p>
-                      <p class="card-text">{{$product->condition->name}}</p>
-                      <p class="card-text">{{$product->description}}</p>
-                  </div>
-              </div>  
-          </div> --}}
+          <div class="col-2"></div>
           <div class="col-12 col-md-5 d-flex mt-5">
             <div id="carouselExample" class="carousel slide">
               <div class="carousel-inner">
@@ -38,7 +27,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-3 col-lg-3 d-flex flex-column mt-5 carousel-col justify-content-between">
+          <div class="col-12 col-md-2 d-flex flex-column mt-5 carousel-col justify-content-between">
                   <div>
                     <p class="fs-4 text-uppercase">{{$product->category->name}}</p>
                     <hr>
@@ -46,9 +35,10 @@
                       <h3 class="fw-semibold fs-2">{{$product->name}}</h3>
                     </div>
                   <div>
-                      <p class="fw-semibold fs-3 text-dark">{{$product->price}} €</p>
+                      <p class="fw-semibold fs-3 t-o">{{$product->price}} €</p>
                 </div>
               </div>
+              <div class="col-2"></div>
               <div class="col-12 col-md-5">
                 <h2 class="mt-5 mb-4">Dati principali</h2>
                 <div class="d-flex gap-5">
@@ -59,7 +49,7 @@
                 <h2 class="mt-5 mb-4">Descrizione</h2>
                 <p>{{$product->description}}</p>
               </div>
-              <div class="col-12 col-md-3"></div> 
+              <div class="col-12 col-md-2"></div> 
               
           </div>
         </div>

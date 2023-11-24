@@ -36,7 +36,7 @@
     background-color: var(--n) !important;
 }
 
-h1-home {
+.h1-home {
     font-family: "Russo One", sans-serif;
     font-size: 14vh;
 }
@@ -55,6 +55,13 @@ h1-home {
 }
 .homeLink {
     color: var(--o) !important;
+}
+.nav-custom {
+    width: 96vw;
+    position: fixed;
+    top: 0;
+    box-shadow: 1px 1px 10px var(--b);
+    z-index: 1030;
 }
 
 .card {
