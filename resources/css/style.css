@@ -48,14 +48,12 @@
 
 /* NAVBAR */
 .nav-link {
-    color: var(--n);
+    color: var(--n) !important;
 }
 .nav-link:hover {
-    color: var(--o);
-}
-.homeLink {
     color: var(--o) !important;
 }
+
 .nav-custom {
     width: 96vw;
     position: fixed;
