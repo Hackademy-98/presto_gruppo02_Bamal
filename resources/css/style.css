@@ -66,6 +66,18 @@
     width: 30px;
 }
 
+.board {
+    background: url(/public/media/board.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 32rem;
+    width: 100vw;
+    box-shadow: 0px 0px 80px lightslategray;
+}
+.board-text {
+    font-size: 4vw;
+}
+
 /* .card {
     width: 250px;
     height: 320px;
@@ -154,8 +166,7 @@
 }
 .card-custom {
     border: 2px solid var(--b);
-    
 }
 input {
-    border: 2px solid var(--b) !important; 
+    border: 2px solid var(--b) !important;
 }
