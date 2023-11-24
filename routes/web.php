@@ -26,8 +26,7 @@ Route::get('/annuncio/categoria/{category}', [ProductController::class,'filterBy
 Route::get('/annunci', [ProductController::class, 'index'])->name('index');
 
 
-
-
+//Rotta Dashboard
 
 
 
