@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
         <div class="row justify-content-center pt-5">
-            <h2 class="text-center mt-5 pt-3 fs-1 ">Tutti gli annunci</h2>
+            <h2 class="text-center mt-5 pt-3 t-b fs-1 ">Tutti gli annunci</h2>
             @foreach ($products as $product)
             <x-card :product='$product'/>
             

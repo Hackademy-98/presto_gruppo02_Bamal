@@ -1,9 +1,9 @@
 <x-layout>
 
     <div class="container my-5">
-        <div class="row pt-5">
+        <div class="row pt-5 ">
             <div class="col-12 col-md-7 mt-4">
-                <h1 class="pb-3">Login</h1>
+                <h1 class="pb-3 t-b">Login</h1>
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="mb-3">
@@ -23,6 +23,8 @@
                     <button type="submit" class="btn mt-2 bg-o rounded-5 text-white">Submit</button>
                 </form>
             </div>
+
+            
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 <div class="col-12 col-md-6 col-lg-3 mt-5 d-flex flex-col justify-content-center">
-    <div class="card card-custom p-3" style="width: 18rem;">
+    <div class="card card-custom shadow-lg p-3" style="width: 18rem;">
         <img src="{{Storage::url($product->img)}}" class="card-img-top" alt="...">
 
         <div class="card-body p-0">
