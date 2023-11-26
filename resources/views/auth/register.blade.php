@@ -34,7 +34,7 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                    <button type="submit" class="btn bg-o text-white rounded-5 mt-2">Submit</button>
+                    <button type="submit" class="btn bg-o text-white rounded-5 mt-2 btnOrange">Submit</button>
                 </form>
             </div>
         </div>

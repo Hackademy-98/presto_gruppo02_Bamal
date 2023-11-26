@@ -1,11 +1,11 @@
 <x-layout>
 
-<header class="container-fluid headerHome sfondoHeader bg-white d-flex align-items-center justify-content-center bgHeader">    
+<header class="container-fluid headerHome sfondoHeader bg-white d-flex align-items-center justify-content-center bgHeader shadow-lg">    
     <div class="row w-100">
         <div class="col-12 col-md-6  text-center ms-md-5 ps-md-5">          
                 <h1 class="t-b m-0 h1-home ms-md-5">PRESTO</h1>
             <h2 class="t-b">Lorem ipsum dolor sit amet consectetur</h2>
-            <a class="btn fs-5 text-white  mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
+            <a class="btn fs-5 text-white btnOrange mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
         </div>        
     </div>
 </header>
@@ -16,7 +16,7 @@
 
 <div class="container">
     <div class="row justify-content-center mb-5">
-        <h2 class="text-center mb-3 mt-5">Ultimi annunci</h2>
+        <h2 class="text-center mb-3 pt-3 mt-5 t-b">Ultimi annunci</h2>
         @foreach ($products as $product)
         <x-card :product='$product'/>
         {{-- <div class="col-12 col-md-6 col-lg-3 d-flex flex-col align-items-center justify-content-center">

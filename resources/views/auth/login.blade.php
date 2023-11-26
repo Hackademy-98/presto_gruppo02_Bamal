@@ -20,7 +20,7 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                    <button type="submit" class="btn mt-2 bg-o rounded-5 text-white">Submit</button>
+                    <button type="submit" class="btn mt-2 bg-o rounded-5 text-white btnOrange">Submit</button>
                 </form>
             </div>
 

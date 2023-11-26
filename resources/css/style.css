@@ -187,3 +187,14 @@ input {
     background-repeat: no-repeat;
     
 }
+
+.btnOrange:hover{
+    background-color: #dd8a16 !important;
+    
+}
+.btnBlu:hover{
+    background-color: #2155ff !important;
+}
+.cardLink:hover{
+    color: var(--o) !important;
+}
