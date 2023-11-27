@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\Condition;
 use Illuminate\Database\Eloquent\Model;
@@ -23,4 +24,7 @@ class Product extends Model
     public function condition(){
         return $this->belongsTo(Condition::class);
     }
+    public static function toBeRevisionedCount(){
+        return Product::where('is_accepted', null)->count();
+       }
 }

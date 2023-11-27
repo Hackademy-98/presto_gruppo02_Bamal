@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,12 @@ Route::get('/annunci', [ProductController::class, 'index'])->name('index');
 Route::get('/dashboard', [UserController::class, 'home'])->name('auth.dashboard');
 
 
-//Rotta Dettaglio
+//Rotta Home del revisore
+Route::get('home/revisore', [RevisorController::class, 'index'] )->name('revisor.index');
+
+//Rotta per accettare annuncio
+Route::patch('annuncio/accetta/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.acceptAnnouncement');
+//Rotta per rifiutare annuncio
+Route::patch('annuncio/rifiuta/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.rejectAnnouncement');
 
 

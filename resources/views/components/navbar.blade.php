@@ -15,6 +15,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('index') }}">Annunci</a>
                     </li>
+                    @auth
+                    @if(Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('revisor.index') }}">Menù revisore</a>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">{{App\Models\Product::toBeRevisionedCount()}}</span>
+                    </li>
+                    @endif
+                    @endauth
                 </ul>
                 
                 @guest
