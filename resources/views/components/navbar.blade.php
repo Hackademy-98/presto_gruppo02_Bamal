@@ -27,14 +27,14 @@
                     </li>
                 </ul>
                 @else
-                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::User()->name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="{{route('auth.dashboard')}}">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="{{ route('products.create') }}">Nuovo annuncio</a></li>
+                            <li><a class="dropdown-item t-b" href="{{route('auth.dashboard')}}">Dashboard</a></li>
+                            <li><a class="dropdown-item t-b" href="{{ route('products.create') }}">Nuovo annuncio</a></li>
                             
                             <form class="ps-1" action="{{ route('logout') }}" method="POST">
                                 @csrf
