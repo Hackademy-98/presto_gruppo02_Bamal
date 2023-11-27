@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
@@ -33,11 +34,11 @@ Route::get('/dashboard', [UserController::class, 'home'])->name('auth.dashboard'
 
 
 //Rotta Home del revisore
-Route::get('home/revisore', [RevisorController::class, 'index'] )->name('revisor.index');
+Route::get('home/revisore', [RevisorController::class, 'index'] )-> middleware('isRevisor')->name('revisor.index');
 
 //Rotta per accettare annuncio
-Route::patch('annuncio/accetta/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.acceptAnnouncement');
+Route::patch('annuncio/accetta/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.acceptAnnouncement');
 //Rotta per rifiutare annuncio
-Route::patch('annuncio/rifiuta/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.rejectAnnouncement');
+Route::patch('annuncio/rifiuta/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.rejectAnnouncement');
 
 
