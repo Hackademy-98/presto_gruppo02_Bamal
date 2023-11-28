@@ -11,4 +11,8 @@ class PublicController extends Controller
         $products = Product::where('is_accepted', true)->take(4)->orderByDesc('created_at')->get();
         return view('home', compact('products'));
     }
+    public function searchProduct(Request $request){
+        $products = Product::search($request->searched)->where('is_accepted', true)->paginate(16);
+        return view('index', compact('products'));
+    }
 }

@@ -50,3 +50,5 @@ Route::post('/contattaci-email', [UserController::class,'sendemail'])->name('aut
 
 Route::get('/rendiRevisore/{user}',[UserController::class,'makeRevisor'])->name('make.revisor');
 
+// ricerca annuncio
+Route::get('/ricerca/annuncio', [PublicController::class, 'searchProduct'])->name('products.search');

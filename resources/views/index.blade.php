@@ -11,12 +11,24 @@
                 @endforeach
             </div>
             <div class="col-3">
+                <form method="GET" action="{{route('products.search')}}">
+                    <input aria-label="search" placeholder="search" class="form-control" name="searched" type="search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
             </div>
             <div class="col-9 d-flex flex-wrap gap-3">
-            @foreach ($products as $product)
+            @forelse ($products as $product)
             <x-card :product='$product'/>
-            @endforeach
+            @empty 
+            <div class="col-12">
+                <div class="alert alert-warning py-5">
+                    <p class="lead">Non ci sono annunci per questa ricerca</p>
+                </div>
             </div>
+            @endforelse
+
+            </div>
+
             <div class="container-fluid mt-5">
                 <div class="row justify-content-center">
                     <div class="col-12 d-flex justify-content-center">

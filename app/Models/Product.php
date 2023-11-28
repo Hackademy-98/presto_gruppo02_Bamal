@@ -8,12 +8,26 @@ use App\Models\Category;
 use App\Models\Condition;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
     protected $fillable=['img','name','description','category','condition','price','user_id', 'category_id' ];
 
+    public function toSearchableArray(){
+        $condition= $this->condition;
+        $category= $this->category;
+        $array= [
+            'id'=>$this->id,
+            'name'=>$this->name,
+            'description'=>$this->description,
+            'category'=>$category,
+            'condition'=>$condition,
+        ];
+        return $array;
+
+    }
     public function category(){
         return $this->belongsTo(Category::class);
     }
