@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 col-lg-3 mt-5 d-flex flex-col justify-content-center">
+
     <div class="card card-custom shadow p-3" style="width: 18rem;">
         <img src="{{Storage::url($product->img)}}" class="card-img-top" alt="...">
 
@@ -11,4 +11,3 @@
           <a href="{{ route('products.show', compact('product')) }}" class="btn btnBlu bg-b rounded-5 t-n">Dettaglio</a>
         </div>
       </div>
-</div>
