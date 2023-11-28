@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 class UserController extends Controller
 {
     public function home(){
-        $products = Auth::User()->products;
+        $products = Auth::User()->products->where('is_accepted', null)->sortByDesc('created_at');
         return view('auth.dashboard', compact('products'));
     }
 
@@ -18,6 +18,12 @@ class UserController extends Controller
         return view('auth.contact');
     }
     public function sendemail(Request $request){
-        Mail::to('admin@gmail.com')->send(new BecameRevisor($request));
+        $data = [
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'description'=>$request->description,
+        ];
+        Mail::to('admin@gmail.com')->send(new BecameRevisor($data));
+        return redirect()->route('home')->with('message', 'Grazie per la tua richiesta di diventare revisore.');
     }
 }

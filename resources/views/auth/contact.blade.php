@@ -4,7 +4,7 @@
         <div class="row pt-5 my-5">
             <div class="col-12 col-md-7">
                 <h1 class="mt-4 mb-4 t-b">Lavora con Noi!</h1>
-                <form action="{{ route('') }}" method="POST">
+                <form action="{{ route('auth.sendEmail') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label fs-5">Username</label>
@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label fs-5">Perchè hai scelto noi?</label>
-                        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                        <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
                         @error('description')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror

@@ -44,7 +44,7 @@ Route::patch('annuncio/rifiuta/{announcement}', [RevisorController::class, 'reje
 
 
 //Rotta lavora con noi 
-Route::get('/contattaci', [UserController::class,'form'])->name('auth.contact');
+Route::get('/contattaci', [UserController::class,'form'])->middleware('auth')->name('auth.contact');
 //Rotta lavora con noi 
 Route::post('/contattaci-email', [UserController::class,'sendemail'])->name('auth.sendEmail');
 
