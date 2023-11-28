@@ -35,7 +35,7 @@
                 </ul>
                 @else
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::User()->name }}
                         </a>
