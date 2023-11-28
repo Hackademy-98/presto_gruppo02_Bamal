@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Artisan;
 class UserController extends Controller
 {
     public function home(){
-        $products = Auth::User()->products->where('is_accepted', null)->sortByDesc('created_at');
+        $products = Auth::User()->products->where('is_accepted', true)->sortByDesc('created_at');
         return view('auth.dashboard', compact('products'));
     }
 
