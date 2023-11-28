@@ -20,6 +20,7 @@ use App\Http\Controllers\RevisorController;
 //!Route per la visualizzazione della pagina home
 Route::get('/', [PublicController::class, 'home'])->name('home');
 
+
 Route::get('/annuncio/crea',[ProductController::class,'create'])->name('products.create');
 
 Route::get('/annuncio/dettaglio/{product}',[ProductController::class,'show'])->name('products.show');
@@ -40,5 +41,12 @@ Route::get('home/revisore', [RevisorController::class, 'index'] )-> middleware('
 Route::patch('annuncio/accetta/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->middleware('isRevisor')->name('revisor.acceptAnnouncement');
 //Rotta per rifiutare annuncio
 Route::patch('annuncio/rifiuta/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->middleware('isRevisor')->name('revisor.rejectAnnouncement');
+
+
+//Rotta lavora con noi 
+Route::get('/contattaci', [UserController::class,'form'])->name('auth.contact');
+//Rotta lavora con noi 
+Route::post('/contattaci-email', [UserController::class,'sendemail'])->name('auth.sendEmail');
+
 
 
