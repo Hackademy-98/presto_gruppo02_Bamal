@@ -2,7 +2,7 @@
 <div class="container-fluid my-5">
     <!-- Footer -->
     <footers
-            class="text-center text-lg-start text-white"
+            class="text-center text-lg-start text-white "
             style="background-color: #fcfcfc"
             >
       <!-- Grid container -->
