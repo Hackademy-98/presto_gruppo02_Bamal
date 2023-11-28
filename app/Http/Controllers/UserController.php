@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use PharIo\Manifest\Email;
 use App\Mail\BecameRevisor;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class UserController extends Controller
 {
@@ -23,7 +26,13 @@ class UserController extends Controller
         'email'=>$request->email,
         'description'=>$request->description,
         ];
-        Mail::to('admin@gmail.com')->send(new BecameRevisor($data));
+        Mail::to('admin@gmail.com')->send(new BecameRevisor($data, Auth::user()));
         return redirect()->route('home')->with('message', 'Grazie per la tua richiesta di diventare revisore.');
+
+    }
+
+    public function makeRevisor(User $user){
+        Artisan::call('presto:makeUserRevisor',['email'=>$user->email]);
+        return redirect()->route('home')->with('message', 'l\'utente è diventato revisore');
     }
 }

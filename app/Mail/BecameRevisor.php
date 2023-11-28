@@ -5,6 +5,7 @@ namespace App\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
@@ -20,9 +21,11 @@ class BecameRevisor extends Mailable
      * Create a new message instance.
      */
     public $data;
-    public function __construct($data)
+    public $user;
+    public function __construct($data,User $user)
     {
         $this->data = $data;
+        $this->user = $user;
     }
 
     /**
