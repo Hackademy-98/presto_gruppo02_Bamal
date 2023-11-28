@@ -2,15 +2,15 @@
     <div class="container-fluid overflow-hidden">
         <div class="row justify-content-center pt-5">
             <h2 class="text-center mt-5 pt-3 t-b fs-1 ">Tutti gli annunci</h2>
-            <div class="col-12 d-flex justify-content-center my-5">
-                <div class="col-1"></div>
+            <div class="col-12 d-flex justify-content-center my-5 gap-2">
+
                 @foreach ($categories as $category)
-                    <div class="col-1 rounded-5">
-                        <a class="btn" href="{{ route('products.filterByCategory', compact('category')) }}">{{ $category->name }}</a>
+                    <div class="col-1 rounded-5 d-flex justify-content-center align-items-center">
+                        <a class="box_categories" href="{{ route('products.filterByCategory', compact('category')) }}">{{ $category->name }}</a>
                     </div>
                 @endforeach
             </div>
-            <div class="col-3">
+            <div class="col-3 d-flex">
                 <form method="GET" action="{{route('products.search')}}">
                     <input aria-label="search" placeholder="search" class="form-control" name="searched" type="search">
                     <button class="btn btn-primary" type="submit">Search</button>

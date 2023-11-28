@@ -21,7 +21,7 @@ return new class extends Migration
         });
 
         $categories=[
-            "Arredamento", "Elettronica", "Veicoli", "Strumenti musicali", "Abbigliamento", "Libri", "Videogiochi", "Animali", "Fai da te", "Beauty"
+            "Arredamento", "Elettronica", "Veicoli", "Musica", "Abbigliamento", "Libri", "Videogiochi", "Animali", "Fai da te", "Beauty"
         ];
         foreach($categories as $category){
             Category::create([
