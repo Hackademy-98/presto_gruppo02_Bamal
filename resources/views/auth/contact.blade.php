@@ -4,6 +4,7 @@
         <div class="row pt-5 my-5">
             <div class="col-12 col-md-7">
                 <h1 class="mt-4 mb-4 t-b">Lavora con Noi!</h1>
+                
                 <form action="{{ route('auth.sendEmail') }}" method="POST">
                     @csrf
                     <div class="mb-3">

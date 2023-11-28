@@ -7,16 +7,16 @@
   </div>
   <ul class="social-icon">
     <li class="social-icon__item"><a class="social-icon__link" href="#">
-        <i class="logo-facebook fa-brands fa-facebook"></i>
+        <i class="logo-facebook fa-brands fa-facebook t-o"></i>
       </a></li>
     <li class="social-icon__item"><a class="social-icon__link" href="#">
-        <i class="logo-twitter fa-brands fa-twitter"></i>
+        <i class="logo-twitter fa-brands fa-twitter t-o"></i>
       </a></li>
     <li class="social-icon__item"><a class="social-icon__link" href="#">
-        <i class="logo-linkedin fa-brands fa-linkedin"></i>
+        <i class="logo-linkedin fa-brands fa-linkedin t-o"></i>
       </a></li>
     <li class="social-icon__item"><a class="social-icon__link" href="#">
-        <i class="logo-instagram fa-brands fa-instagram"></i>
+        <i class="logo-instagram fa-brands fa-instagram t-o"></i>
       </a></li>
   </ul>
   <ul class="menu">

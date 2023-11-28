@@ -27,7 +27,8 @@ class UserController extends Controller
         'description'=>$request->description,
         ];
         Mail::to('admin@gmail.com')->send(new BecameRevisor($data, Auth::user()));
-        return redirect()->route('home')->with('message', 'Grazie per la tua richiesta di diventare revisore.');
+       
+        return redirect()->route('home')->with('message', 'Grazie per la tua richiesta di diventare revisore.');        
 
     }
 

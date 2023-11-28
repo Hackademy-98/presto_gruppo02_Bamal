@@ -10,7 +10,7 @@
             
             <div class="col-12 mt-5">
                 <h1 class="mt-5 pt-3 t-b text-center">Area revisore</h1>
-                <h2 class="t-o text-center my-3">{{$announcementToCheck ? 'Ecco gli annunci da revisionare' : 'Non ci sono annunci da revisionare'}}</h2>
+                <h2 class="t-o text-center my-3">{{$announcementToCheck ? 'Ecco gli annunci da revisionare:' : 'Non ci sono annunci da revisionare'}}</h2>
                 
             </div>
         </div>
@@ -46,18 +46,18 @@
                     <p class="card-text my-2 text-wrap description-box"> Descrizione : {{$announcementToCheck->description}}</p>
                     <p class="card-footer">Pubblicato il : {{$announcementToCheck->created_at->format('d/m/Y') }} da: {{ Auth::User()->name }} </p>
                 </div>
-                <div class="col-12 div col-md-5 col-lg-5">
+                <div class="col-12 div col-md-5 col-lg-5 text-center">
                     <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$announcementToCheck])}}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn btn-outline-success shadow">Accetta</button>
+                        <button type="submit" class="btn rounded-5 btn-outline-success w-25 shadow">Accetta</button>
                     </form>
                 </div>
-                <div class="col-12 div col-md-5 col-lg-5 text-end">
+                <div class="col-12 div col-md-5 col-lg-5 text-center">
                     <form action="{{route('revisor.rejectAnnouncement',['announcement'=>$announcementToCheck])}}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn btn-outline-danger shadow">Rifiuta</button>
+                        <button type="submit" class="btn rounded-5 btn-outline-danger w-25 shadow">Rifiuta</button>
                     </form>
                 </div>
             </div>
