@@ -17,8 +17,11 @@
                     @auth
                     @if(Auth::user()->is_revisor)
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('revisor.index') }}">Menù revisore</a>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">{{App\Models\Product::toBeRevisionedCount()}}</span>
+                        <a class="nav-link position-relative " href="{{ route('revisor.index') }}">Menù revisore
+                        <span class=" position-absolute top-1 start-100 translate-middle badge rounded-pill bg-o">{{App\Models\Product::toBeRevisionedCount()}}
+                            <span class="visually-hidden">unread message</span>
+                        </span>
+                        </a>
                     </li>
                     @endif
                     @endauth

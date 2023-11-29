@@ -5,8 +5,8 @@
         
         <div class="row w-100">
             <div class="col-12 col-md-6  text-center ms-md-5 ps-md-5">          
-                <h1 class="t-b m-0 h1-home ms-md-5">PRESTO</h1>
-                <h2 class="t-b">Lorem ipsum dolor sit amet consectetur</h2>
+                <h1 class="t-b m-0 h1-home ms-md-5 ms-lg-0">PRESTO</h1>
+                <h2 class="t-b">Benvenuto nel più grande e-commerce del madagascar!</h2>
                 <a class="btn fs-5 text-white btnOrange mt-3 rounded-5 bg-o" href="{{route('products.create')}}">Inserisci annuncio</a>
             </div>        
         </div>
