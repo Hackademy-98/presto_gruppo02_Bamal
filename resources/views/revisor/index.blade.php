@@ -63,11 +63,12 @@
             @endif
         </div>
     </div>
-        <div class="container-fluid vh-100 mt-5 pt-5">
-            <h2 class="text-center t-b fw-semibold fs-1">Cronologia</h2>
+    <div class="container-fluid vh-100 my-5 pt-5">
         <div class="row justify-content-center my-5">
+            <div class="col-12 my-5 pt-5"> <h2 class="text-center t-b fw-semibold fs-1">Cronologia</h2></div>
             @foreach ($announcementsChecked as $product)
-            <div class="col-2 d-flex justify-content-center">
+
+            <div class="col-12 col-md-3 d-flex justify-content-center">
                 <div class="card card-custom shadow p-3" style="width: 18rem;">
                     <img src="{{Storage::url($product->img)}}" class="card-img-top" alt="...">
                     
@@ -80,32 +81,32 @@
                         
                         @if ($product->is_accepted)
                         <divm class="d-flex justify-content-center">
-                        <form action="{{route('products.destroy',compact('product'))}}" method="POST">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
-                        </form>
+                            <form action="{{route('products.destroy',compact('product'))}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
+                            </form>
                         </divm>
                         @else
                         <div class="d-flex justify-content-around">
-                        <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$product])}}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn rounded-2 btn-outline-success shadow">Accetta</button>
-                        </form>
-                        <form action="{{route('products.destroy',compact('product'))}}"      method="POST">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
-                        </form>
+                            <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$product])}}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn rounded-2 btn-outline-success shadow">Accetta</button>
+                            </form>
+                            <form action="{{route('products.destroy',compact('product'))}}"      method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
+                            </form>
                         </div>
                         @endif
                     </div>
                 </div>
             </div>
-                @endforeach
+            @endforeach
         </div>
     </div>
-      
-
+    
+    
 </x-layout>
