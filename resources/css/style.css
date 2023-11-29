@@ -70,9 +70,9 @@
     background: url("/public/media/sfondoCat-01.png");
     
     background-size: cover;
-   
+
     height: 32rem;
-    
+
     /* box-shadow: 0px 0px 80px lightslategray; */
 }
 .board-text {
@@ -141,7 +141,7 @@
 }
 
 .wave {
-    position: absolute;    
+    position: absolute;
     top: -100px;
     left: 0;
     width: 100%;
@@ -153,7 +153,7 @@
 .wave#wave1 {
     z-index: 1000;
     opacity: 1;
-    bottom: 0;    
+    bottom: 0;
     animation: animateWaves 4s linear infinite;
 }
 
@@ -195,7 +195,6 @@
         background-positon-x: 0px;
     }
 }
-
 
 .carousel-col {
     max-height: 30rem;
@@ -255,8 +254,7 @@ input {
     width: 8rem;
 }
 
-
-.btn-custom {    
+.btn-custom {
     color: rgb(229, 62, 2);
     background-color: #ffe8c7;
 }
@@ -322,7 +320,6 @@ input {
     fill: #7d6aa5;
 }
 
-
 /* animations */
 
 .wheel {
@@ -337,7 +334,7 @@ input {
         animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }
     100% {
-        transform: rotate(960deg)
+        transform: rotate(960deg);
     }
 }
 
@@ -355,7 +352,7 @@ input {
 
 @keyframes clock-rotate {
     100% {
-        transform: rotate(360deg)
+        transform: rotate(360deg);
     }
 }
 
@@ -367,7 +364,7 @@ input {
 
 @keyframes box-top-anim {
     50% {
-        transform: rotate(-5deg)
+        transform: rotate(-5deg);
     }
 }
 
@@ -394,7 +391,7 @@ input {
 
 @keyframes cup-rotate {
     50% {
-        transform: rotate(-5deg)
+        transform: rotate(-5deg);
     }
 }
 
@@ -406,10 +403,10 @@ input {
 
 @keyframes pillow-anim {
     25% {
-        transform: rotate(10deg) translateY(5px)
+        transform: rotate(10deg) translateY(5px);
     }
     75% {
-        transform: rotate(-10deg)
+        transform: rotate(-10deg);
     }
 }
 
@@ -421,10 +418,10 @@ input {
 
 @keyframes stripe-anim {
     25% {
-        transform: translate(10px, 0) rotate(-10deg)
+        transform: translate(10px, 0) rotate(-10deg);
     }
     75% {
-        transform: translateX(10px)
+        transform: translateX(10px);
     }
 }
 
@@ -434,14 +431,14 @@ input {
 
 @keyframes bike-anim {
     0% {
-        transform: translateX(-1300px)
+        transform: translateX(-1300px);
     }
     50% {
         transform: translateX(0);
         animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
     }
     100% {
-        transform: translateX(1300px)
+        transform: translateX(1300px);
     }
 }
 
@@ -453,7 +450,7 @@ input {
 
 @keyframes ruck-anim {
     50% {
-        transform: rotate(5deg)
+        transform: rotate(5deg);
     }
 }
 
@@ -465,32 +462,32 @@ input {
 }
 
 .circle.c1 {
-    animation-duration: 2s
+    animation-duration: 2s;
 }
 
 .circle.c2 {
-    animation-duration: 3s
+    animation-duration: 3s;
 }
 
 .circle.c3 {
-    animation-duration: 1s
+    animation-duration: 1s;
 }
 
 .circle.c4 {
-    animation-duration: 1s
+    animation-duration: 1s;
 }
 
 .circle.c5 {
-    animation-duration: 2s
+    animation-duration: 2s;
 }
 
 .circle.c6 {
-    animation-duration: 3s
+    animation-duration: 3s;
 }
 
 @keyframes circle-anim {
     50% {
-        transform: scale(.2) rotateX(360deg) rotateY(360deg)
+        transform: scale(0.2) rotateX(360deg) rotateY(360deg);
     }
 }
 
@@ -519,13 +516,12 @@ input {
 
 @keyframes four-anim {
     50% {
-        transform: scale(.98)
+        transform: scale(0.98);
     }
 }
 
-#imgSide{
+#imgSide {
     width: 90%;
-       
 }
 /* .imgSide{
     transition: 1s;     
@@ -543,25 +539,22 @@ input {
 
 .form {
     backdrop-filter: blur(7px);
-    
 }
-    
-.sfondoLogin{
+
+.sfondoLogin {
     background-image: url("/public/media/sfondoLogin-02-02.png");
     background-position-x: 13vw;
     object-fit: cover;
     background-size: contain;
-
 }
-.sfondoRegister{
+.sfondoRegister {
     background-image: url("/public/media/sfondoReg-03.png");
-    background-position-x: 13vw;    
+    background-position-x: 13vw;
     object-fit: cover;
     background-size: contain;
-    
 }
 
-.sfondoCreate{
+.sfondoCreate {
     background-image: url("/public/media/sfondoCreate-04.png");
     background-position-x: 3vw;
     object-fit: cover;

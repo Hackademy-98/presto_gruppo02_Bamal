@@ -9,7 +9,7 @@
             @endif
             
             <div class="col-12 mt-5">
-                <h1 class="mt-5 pt-3 t-b text-center">Area revisore</h1>
+                <h1 class="mt-5 pt-3 t-b text-center fw-semibold">Area revisore</h1>
                 <h2 class="t-o text-center my-3">{{$announcementToCheck ? 'Ecco gli annunci da revisionare:' : 'Non ci sono annunci da revisionare'}}</h2>
                 
             </div>
@@ -60,13 +60,14 @@
                     <button type="submit" class="btn rounded-5 btn-outline-danger w-25 shadow">Rifiuta</button>
                 </form>
             </div>
+            @endif
         </div>
     </div>
-        @endif
-        <div class="container-fluid vh-100">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-3">
-                @foreach ($announcementsChecked as $product)
+        <div class="container-fluid vh-100 mt-5 pt-5">
+            <h2 class="text-center t-b fw-semibold fs-1">Cronologia</h2>
+        <div class="row justify-content-center my-5">
+            @foreach ($announcementsChecked as $product)
+            <div class="col-2 d-flex justify-content-center">
                 <div class="card card-custom shadow p-3" style="width: 18rem;">
                     <img src="{{Storage::url($product->img)}}" class="card-img-top" alt="...">
                     
@@ -75,28 +76,36 @@
                             <h5 class="card-title mt-3 t-o fw-bolder">{{ $product->name }}</h5>
                         </div>
                         <p class="text-body" ><a class="text-decoration-none cardLink t-b fs-5" href="{{route('products.filterByCategory',['category'=>$product->category])}}">{{ $product->category->name }}</a></p>
-                        <p class="text-title fs-6">{{ $product->description }}</p>
+                        <p class="text-title fs-6 card-div"><span class="t-b">Descrizione:</span> <br>{{ $product->description }}</p>
                         
                         @if ($product->is_accepted)
-                        <form action="{{route('products.destroy',compact('product'))}}"      method="POST">
+                        <divm class="d-flex justify-content-center">
+                        <form action="{{route('products.destroy',compact('product'))}}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn rounded-2 btn-outline-danger w-50 shadow">Cancella</button>
+                            <button type="submit" class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
                         </form>
+                        </divm>
                         @else
+                        <div class="d-flex justify-content-around">
                         <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$product])}}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="btn rounded-2 btn-outline-success w-50 shadow">Accetta</button>
+                            <button type="submit" class="btn rounded-2 btn-outline-success shadow">Accetta</button>
                         </form>
+                        <form action="{{route('products.destroy',compact('product'))}}"      method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
+                        </form>
+                        </div>
                         @endif
                     </div>
                 </div>
-                @endforeach
             </div>
-            <div class="col-6"></div>
+                @endforeach
         </div>
-    
+    </div>
       
 
 </x-layout>
