@@ -53,3 +53,6 @@ Route::get('/rendiRevisore/{user}',[UserController::class,'makeRevisor'])->name(
 
 // ricerca annuncio
 Route::get('/ricerca/annuncio', [PublicController::class, 'searchProduct'])->name('products.search');
+
+//Rotta Revisore Distruggi annunci 
+Route::delete('/annuncio/cancella/{product}', [ProductController::class,'destroy'])->name('products.destroy');
