@@ -67,13 +67,13 @@
 }
 
 .board {
-    background: url("/public/media/sfondoHeader-01-01.png");
-    background-position: center;
-    background-size: cover;
+    background: url("/public/media/sfondoCat-01-01.png");
     
+    background-size: cover;
+   
     height: 32rem;
-    width: 100vw;
-    box-shadow: 0px 0px 80px lightslategray;
+    
+    /* box-shadow: 0px 0px 80px lightslategray; */
 }
 .board-text {
     font-size: 4vw;
@@ -521,4 +521,49 @@ input {
     50% {
         transform: scale(.98)
     }
+}
+
+#imgSide{
+    width: 90%;
+       
+}
+/* .imgSide{
+    transition: 1s;     
+    animation-iteration-count: infinite;
+    animation-name: imgTranslate;
+}
+@keyframes imgTranslate {
+    from {
+        transform: translateY(10%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+  } */
+
+.form {
+    backdrop-filter: blur(7px);
+    
+}
+    
+.sfondoLogin{
+    background-image: url("/public/media/sfondoLogin-02-02.png");
+    background-position-x: 13vw;
+    object-fit: cover;
+    background-size: contain;
+
+}
+.sfondoRegister{
+    background-image: url("/public/media/sfondoReg-03.png");
+    background-position-x: 13vw;    
+    object-fit: cover;
+    background-size: contain;
+    
+}
+
+.sfondoCreate{
+    background-image: url("/public/media/sfondoCreate-04.png");
+    background-position-x: 3vw;
+    object-fit: cover;
+    background-size: contain;
 }

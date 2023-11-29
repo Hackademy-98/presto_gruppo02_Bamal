@@ -19,9 +19,9 @@
         </div>
     </div>
 </div>
-            <div class="container">
+            <div class="container sfondoCreate min-vh-100">
             <div class="row">
-                <div class="col-12 col-md-7 mb-5">
+                <div class="col-12 p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 col-md-7 mt-3">                    
                 
                     <form wire:submit.prevent='store'>
                         <div class="mb-3">

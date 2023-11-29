@@ -1,9 +1,9 @@
 <x-layout>
 
-    <div class="container">
-        <div class="row pt-5 my-5">
-            <div class="col-12 col-md-7">
-                <h1 class="mt-4 mb-4 t-b">Register</h1>
+    <div class="container vh-100 sfondoRegister">
+        <div class="row pt-5 my-5 justify-content-center">
+            <div class="col-12 form card p-4 col-md-5 pb-4 rounded-5 mt-4 bg-transparent shadow-lg">
+                <h1 class=" mb-4 t-b ">Register</h1>
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div class="mb-3">
