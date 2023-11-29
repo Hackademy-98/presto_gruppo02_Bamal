@@ -21,7 +21,7 @@ class UserController extends Controller
     public function form(){
         return view('auth.contact');
     }
-    public function sendemail(Request $request){
+    public function sendemail(ContactRequest $request){
         
         $data = [
         'name'=>$request->name,
