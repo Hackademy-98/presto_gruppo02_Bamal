@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container-fluid vh-100">
         <div class="row justify-content-center align-item-center my-5">
             <div class="col-8 my-5">
                 
