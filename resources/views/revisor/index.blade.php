@@ -63,4 +63,37 @@
             </div>
             @endif
         </div>   
+        <div class="container-fluid vh-100">
+            <div class="row">
+                <div class="col-6">
+                    @foreach ($announcementsChecked as $product)
+                    <div class="card card-custom shadow p-3" style="width: 18rem;">
+                        <img src="{{Storage::url($product->img)}}" class="card-img-top" alt="...">
+                
+                        <div class="card-body p-0">
+                          <div>
+                          <h5 class="card-title mt-3 t-o fw-bolder">{{ $product->name }}</h5>
+                          </div>
+                          <p class="text-body" ><a class="text-decoration-none cardLink t-b fs-5" href="{{route('products.filterByCategory',['category'=>$product->category])}}">{{ $product->category->name }}</a></p>
+                          <p class="text-title fs-6">{{ $product->description }}</p>
+                          @if ($product->is_accepted)
+                            <form action="{{route('revisor.rejectAnnouncement',['announcement'=>$product])}}"      method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn rounded-2 btn-outline-danger w-50 shadow">Rifiuta</button>
+                            </form>
+                        @else
+                        <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$product])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn rounded-2 btn-outline-success w-50 shadow">Accetta</button>
+                        </form>
+                          @endif
+                        </div>
+                      </div>
+                    @endforeach
+                </div>
+                <div class="col-6"></div>
+            </div>
+        </div>
 </x-layout>
