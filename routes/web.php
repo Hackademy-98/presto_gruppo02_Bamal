@@ -48,7 +48,11 @@ Route::get('/contattaci', [UserController::class,'form'])->middleware('auth')->n
 //Rotta lavora con noi 
 Route::post('/contattaci-email', [UserController::class,'sendemail'])->name('auth.sendEmail');
 
+//!Rotta rendi revisore un utente
 Route::get('/rendiRevisore/{user}',[UserController::class,'makeRevisor'])->name('make.revisor');
 
 // ricerca annuncio
 Route::get('/ricerca/annuncio', [PublicController::class, 'searchProduct'])->name('products.search');
+
+//Rotta Revisore Distruggi annunci 
+Route::delete('/annuncio/cancella/{product}', [ProductController::class,'destroy'])->name('products.destroy');

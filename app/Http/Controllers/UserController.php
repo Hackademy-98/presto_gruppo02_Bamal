@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use PharIo\Manifest\Email;
 use App\Mail\BecameRevisor;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class UserController extends Controller
     public function form(){
         return view('auth.contact');
     }
-    public function sendemail(Request $request){
+    public function sendemail(ContactRequest $request){
+        
         $data = [
         'name'=>$request->name,
         'email'=>$request->email,
@@ -33,7 +35,9 @@ class UserController extends Controller
     }
 
     public function makeRevisor(User $user){
-        Artisan::call('presto:makeUserRevisor',['email'=>$user->email]);
-        return redirect()->route('home')->with('message', 'l\'utente è diventato revisore');
+        if(Auth::user()->email == 'admin@admin'){
+            Artisan::call('presto:makeUserRevisor',['email'=>$user->email]);
+            return redirect()->route('home')->with('message', 'l\'utente è diventato revisore');
+        }
     }
 }

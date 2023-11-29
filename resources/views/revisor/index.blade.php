@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container-fluid vh-100">
-    
+        
         <div class="row">
             @if(session('success'))
             <div class="col-12 alert alert-success">
@@ -40,27 +40,63 @@
                 </div>
             </div>
         </div>
-            <div class="row justify-content-center pb-5">
-                <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-                    <h5 class="card-title mt-5">Titolo : {{$announcementToCheck->name}}</h5>
-                    <p class="card-text my-2 text-wrap description-box"> Descrizione : {{$announcementToCheck->description}}</p>
-                    <p class="card-footer">Pubblicato il : {{$announcementToCheck->created_at->format('d/m/Y') }} da: {{ Auth::User()->name }} </p>
-                </div>
-                <div class="col-12 div col-md-5 col-lg-5 text-center">
-                    <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$announcementToCheck])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="btn rounded-5 btn-outline-success w-25 shadow">Accetta</button>
-                    </form>
-                </div>
-                <div class="col-12 div col-md-5 col-lg-5 text-center">
-                    <form action="{{route('revisor.rejectAnnouncement',['announcement'=>$announcementToCheck])}}" method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="btn rounded-5 btn-outline-danger w-25 shadow">Rifiuta</button>
-                    </form>
-                </div>
+        <div class="row justify-content-center pb-5">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                <h5 class="card-title mt-5">Titolo : {{$announcementToCheck->name}}</h5>
+                <p class="card-text my-2 text-wrap description-box"> Descrizione : {{$announcementToCheck->description}}</p>
+                <p class="card-footer">Pubblicato il : {{$announcementToCheck->created_at->format('d/m/Y') }} da: {{ Auth::User()->name }} </p>
             </div>
-            @endif
-        </div>   
+            <div class="col-12 div col-md-5 col-lg-5 text-center">
+                <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$announcementToCheck])}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn rounded-5 btn-outline-success w-25 shadow">Accetta</button>
+                </form>
+            </div>
+            <div class="col-12 div col-md-5 col-lg-5 text-center">
+                <form action="{{route('revisor.rejectAnnouncement',['announcement'=>$announcementToCheck])}}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit" class="btn rounded-5 btn-outline-danger w-25 shadow">Rifiuta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        @endif
+        <div class="container-fluid vh-100">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-3">
+                @foreach ($announcementsChecked as $product)
+                <div class="card card-custom shadow p-3" style="width: 18rem;">
+                    <img src="{{Storage::url($product->img)}}" class="card-img-top" alt="...">
+                    
+                    <div class="card-body p-0">
+                        <div>
+                            <h5 class="card-title mt-3 t-o fw-bolder">{{ $product->name }}</h5>
+                        </div>
+                        <p class="text-body" ><a class="text-decoration-none cardLink t-b fs-5" href="{{route('products.filterByCategory',['category'=>$product->category])}}">{{ $product->category->name }}</a></p>
+                        <p class="text-title fs-6">{{ $product->description }}</p>
+                        
+                        @if ($product->is_accepted)
+                        <form action="{{route('products.destroy',compact('product'))}}"      method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn rounded-2 btn-outline-danger w-50 shadow">Cancella</button>
+                        </form>
+                        @else
+                        <form action="{{route('revisor.acceptAnnouncement',['announcement'=>$product])}}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button type="submit" class="btn rounded-2 btn-outline-success w-50 shadow">Accetta</button>
+                        </form>
+                        @endif
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="col-6"></div>
+        </div>
+    
+      
+
 </x-layout>

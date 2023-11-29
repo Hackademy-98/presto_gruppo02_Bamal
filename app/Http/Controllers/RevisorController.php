@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class RevisorController extends Controller
 {
     public function index(){
         $announcementToCheck = Product::where('is_accepted', null)->first();
-        return view('revisor.index', compact('announcementToCheck'));
+        $announcementsChecked = Product::where('is_accepted', "!=", null)->get();
+
+        return view('revisor.index', compact('announcementToCheck', 'announcementsChecked'));
     }
 
     public function acceptAnnouncement(Product $announcement){
