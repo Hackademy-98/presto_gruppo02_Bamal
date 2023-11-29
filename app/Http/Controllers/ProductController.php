@@ -71,5 +71,6 @@ class ProductController extends Controller
 
     public function filterByCategory(Category $category){
         return view('products.filterByCategory', compact('category'));
+        
     }
 }

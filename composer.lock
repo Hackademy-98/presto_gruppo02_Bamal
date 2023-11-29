@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0128c8f85fd29e13aea9ad1d1f2a3065",
+    "content-hash": "dc80e34346c0e9cc599925bb1a42dae5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1465,16 +1465,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v10.5.1",
+            "version": "v10.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "f3fe30438a4792752d19366d8b2e03c3f77d8754"
+                "reference": "f9bc115d253de8d3f3f2c201651174f6a5f1a357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/f3fe30438a4792752d19366d8b2e03c3f77d8754",
-                "reference": "f3fe30438a4792752d19366d8b2e03c3f77d8754",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/f9bc115d253de8d3f3f2c201651174f6a5f1a357",
+                "reference": "f9bc115d253de8d3f3f2c201651174f6a5f1a357",
                 "shasum": ""
             },
             "require": {
@@ -1536,7 +1536,7 @@
                 "issues": "https://github.com/laravel/scout/issues",
                 "source": "https://github.com/laravel/scout"
             },
-            "time": "2023-10-31T15:23:07+00:00"
+            "time": "2023-11-28T15:58:23+00:00"
         },
         {
             "name": "laravel/serializable-closure",
