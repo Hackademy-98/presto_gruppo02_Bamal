@@ -1,5 +1,13 @@
-<x-layout>
-    <div class="container-fluid vh-100">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    @vite(['resources/css/app.css','resources/js/app.js'])
+  </head>
+  <body class=" bg-light vh-100">
+    <div class="container-fluid">
         <div class="row justify-content-center align-item-center my-5">
             <div class="col-8 my-5">
                 
@@ -135,4 +143,5 @@
             </div>
         </div>
     </div>
-</x-layout>
+</body>
+</html>
