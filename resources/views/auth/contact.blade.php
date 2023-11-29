@@ -9,14 +9,14 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label fs-5">Username</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" value="{{Auth::user()->name}}">
                         @error('name')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label fs-5">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="email" value="{{Auth::user()->email}}">
                         @error('email')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror

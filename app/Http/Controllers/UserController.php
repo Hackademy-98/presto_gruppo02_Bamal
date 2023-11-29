@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use PharIo\Manifest\Email;
 use App\Mail\BecameRevisor;
 use Illuminate\Http\Request;
@@ -21,6 +22,7 @@ class UserController extends Controller
         return view('auth.contact');
     }
     public function sendemail(Request $request){
+        
         $data = [
         'name'=>$request->name,
         'email'=>$request->email,
