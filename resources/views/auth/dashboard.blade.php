@@ -1,7 +1,16 @@
 <x-layout>
+    <div class="container-fluid sfondoDashboard">
+        <div class="row justify-content-center pt-5">
+            <div class="col col-12 mt-5 text-center">
+                <h1 class="mt-5 pt-4 text-center t-o">La tua Dashboard</h1>
+            </div>
+        </div>
+        
+    </div>
+
 <div class="container">
-    <div class="row pt-5">
-        <h1 class="mt-5 pt-4 text-center t-b">La tua Dashboard</h1>
+    <div class="row ">
+       <h2 class="text-center t-b">I tuoi annunci</h2>
         <div class="col-12 mt-5 flex-wrap d-flex gap-4 justify-content-center">
             
             @foreach ($products as $product)
