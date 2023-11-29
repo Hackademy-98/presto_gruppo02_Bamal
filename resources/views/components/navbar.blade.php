@@ -58,19 +58,23 @@
     
 </div>
 
-<div class="container position-absolute ms-4 mt-5 pt-3">
-    <div class="row mt-4">
+<div class="container-fluid position-absolute mt-5 pt-3 overflow-hidden">
+    <div class="row mt-4 w-100 justify-content-center">
         
         @if (session('message'))
+        <div class="col-6">
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{session('message')}}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        </div>
             @elseif (session('error'))
+            <div class="col-6">
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{session('error')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+        </div>
         @endif
         
     </div>

@@ -48,6 +48,7 @@ Route::get('/contattaci', [UserController::class,'form'])->middleware('auth')->n
 //Rotta lavora con noi 
 Route::post('/contattaci-email', [UserController::class,'sendemail'])->name('auth.sendEmail');
 
+//!Rotta rendi revisore un utente
 Route::get('/rendiRevisore/{user}',[UserController::class,'makeRevisor'])->name('make.revisor');
 
 // ricerca annuncio
