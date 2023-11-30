@@ -576,3 +576,18 @@ input {
     background-size: cover;   
     height: 25rem;
 }
+
+/* BANDIERINE*/
+
+.flag{
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.globo{
+    font-size: large !important;
+}
+
+.dropdown-item:hover{
+    color: var(--b) !important;
+}

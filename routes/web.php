@@ -56,3 +56,7 @@ Route::get('/ricerca/annuncio', [PublicController::class, 'searchProduct'])->nam
 
 //Rotta Revisore Distruggi annunci 
 Route::delete('/annuncio/cancella/{product}', [ProductController::class,'destroy'])->name('products.destroy');
+
+//Rotta delle lingue
+
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLanguage');
