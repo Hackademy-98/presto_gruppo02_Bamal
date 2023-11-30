@@ -1,7 +1,7 @@
 <x-layout>
     
     
-    <header class="container-fluid headerHome sfondoHeader bg-white d-flex align-items-center justify-content-center bgHeader shadow-lg">   
+    <header class="container-fluid headerHome mt-0 vh-100 sfondoHeader bg-white d-flex align-items-center justify-content-center bgHeader shadow-lg">   
         
         <div class="row w-100">
             <div class="col-12 col-md-6  text-center ms-md-5 ps-md-5">          

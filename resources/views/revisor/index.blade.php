@@ -24,7 +24,7 @@
                             <div class="carousel-inner">
                                 @foreach ($announcementToCheck->images as $image)
                                     <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img class="img-fluid p-3 rounded" src="{{ Storage::url($image->path) }}"
+                                        <img class="img-fluid p-3 rounded" src="{{ $announcementToCheck->images()->first()->getUrl(400, 300)}}"
                                             alt="">
                                     </div>
                                 @endforeach
@@ -80,7 +80,7 @@
             @foreach ($announcementsChecked as $product)
                 <div class="col-12 col-md-3 d-flex justify-content-center">
                     <div class="card card-custom shadow p-3" style="width: 18rem;">
-                        <img src="{{ Storage::url($product->img) }}" class="card-img-top" alt="...">
+                        <img src="{{!$product->images()->get()->isEmpty() ? $product->images()->first()->getUrl(400, 300) : "/media/default.png"}}" class="card-img-top" alt="...">
 
                         <div class="card-body p-0">
                             <div>

@@ -5,24 +5,26 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Condition;
-use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class FormProducts extends Component
 {
-
+    
     use WithFileUploads;
-
+    
     public $name;
     public $description;
     public $category;
     public $condition;
     public $price;
-
+    
     public $temporary_images;
     public $images = [];
-
+    
     public $categories;
     public $conditions;
     
@@ -34,11 +36,11 @@ class FormProducts extends Component
         "price"=>'required|decimal:0,2',
         "temporary_images.*"=>'image|max:1024',
         "images.*"=>'image|max:1024'
-
-
+        
+        
     ];
-
-     protected $messages = [
+    
+    protected $messages = [
         "required"=>"Il campo è necessario",
         "min"=>"Il campo ha un numero insufficiente di caratteri",
         "max"=>"Il campo deve contenere massimo 255 caratteri",
@@ -46,9 +48,9 @@ class FormProducts extends Component
         "temporary_images.*.max"=>'Il file deve essere massimo di 1mb',
         "images.image"=>'Il file deve essere un immagine',
         "images.max"=>'Il file deve essere massimo di 1mb',
-
+        
     ];
-
+    
     public function updatedTemporaryImages(){
         if ($this->validate(['temporary_images.*'=>'image|max:1024'])) {
             foreach ($this->temporary_images as $image) {
@@ -56,7 +58,7 @@ class FormProducts extends Component
             }
         }
     }
-
+    
     public function removeImage($key){
         if (in_array($key, array_keys($this->images))) {
             unset($this->images[$key]);
@@ -64,37 +66,42 @@ class FormProducts extends Component
     }
     public function store(){
         $this->validate();
-
+        
         $category = Category::find($this->category);   
         $condition = Condition::find($this->condition);
         
-
+        
         $product = $category->products()->create([
-        'name' => $this->name,
-        'description' => $this->description,
-        'user_id' => Auth::user()->id,     
-        'price' => $this->price,
+            'name' => $this->name,
+            'description' => $this->description,
+            'user_id' => Auth::user()->id,     
+            'price' => $this->price,
         ]);
         
         $condition->products()->save($product);
-
+        
         if(count($this->images)){
             foreach ($this->images as $image) {
-                $product->images()->create(['path'=>$image->store('images', 'public')]);
+                // $product->images()->create(['path'=>$image->store('images', 'public')]);
+                $newFileName = "products/{$product->id}";
+                $newImage = $product->images()->create(['path'=>$image->store($newFileName, "public")]);
+                
+                dispatch(new ResizeImage($newImage->path, 400,300));
             }
-
-        $product->user()->associate(Auth::user());
-
-        $product->save();
+            File::deleteDirectory(storage_path('storage\app\livewire-tmp'));
+            
+            $product->user()->associate(Auth::user());
+            
+            $product->save();
         }
         
-
+        
         $this->reset();
         session()->flash('success', 'Annuncio creato con successo');
-    
+        
         
     }
-
+    
     public function render()
     {
         $this->categories= Category::all();

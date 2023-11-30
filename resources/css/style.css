@@ -209,7 +209,7 @@
 }
 
 .imgCard {
-    width: 14vw;
+    
     object-fit: cover;
     transition: 3s;
 }
