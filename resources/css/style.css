@@ -576,3 +576,10 @@ input {
     background-size: cover;   
     height: 25rem;
 }
+
+
+/* Classe derivante dall'inserimento dell'img nel form creazione annunci */
+.img-preview{
+    width: 500px;
+    height: 500px;
+}

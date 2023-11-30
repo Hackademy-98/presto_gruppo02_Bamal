@@ -51,10 +51,11 @@ class FormProducts extends Component
     ];
 
     public function store(){
-        $this->validate();
+        /* $this->validate(); */
         if(Auth::user()){   
         $category = Category::find($this->category);   
         $condition = Condition::find($this->condition);
+        
 
         $product = $category->products()->create([
         'name' => $this->name,
