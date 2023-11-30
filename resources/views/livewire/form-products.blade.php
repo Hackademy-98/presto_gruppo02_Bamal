@@ -25,11 +25,6 @@
                 
                     <form wire:submit.prevent='store'>
                         <div class="mb-3">
-                            <label for="img" class="form-label fs-5 t-b">Img</label>
-                            <input type="file" class="form-control" id="img" name="img" wire:model='img'>
-                            @error ('img') <p class="text-danger">{{$message}}</p> @enderror
-                        </div>
-                        <div class="mb-3">
                             <label for="name" class="form-label fs-5 t-b">Nome</label>
                             <input type="text" class="form-control" id="name" name="name" wire:model='name'>
                             @error ('name')<p class="text-danger">{{$message}}</p> @enderror
@@ -65,6 +60,26 @@
                             <input type="text" class="form-control" id="price" name="price" wire:model='price'>
                             @error ('price')<p class="text-danger">{{$message}}</p> @enderror
                         </div>
+                        <div class="mb-3">
+                            <input wire:model="temporary_images" type="file" class="form-control shadow" name="images" multiple placeholder="Img"/>
+                            @error ('temporary_images.*') <p class="text-danger">{{$message}}</p> @enderror
+                        </div>
+                        @if (!empty($images))
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Anteprima foto:</p>
+                                <div class="row border border-4 border-info rounded shadow py-4">
+                                    @foreach ($images as $key => $image)
+                                        <div class="col my-3">
+                                            <div class="img-preview mx-auto shadow rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                                            <button class="btn btn-danger shadow d-block text-center mt-2 mx-auto" type="button" wire:click="removeImage({{ $key }})">Cancella</button>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                            
+                        @endif
                         <button class="btn btnOrange bg-o mt-2 text-white rounded-5" type="submit">Crea Annuncio</button>
                     </form>
                 </div>

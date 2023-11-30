@@ -7,34 +7,45 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Condition;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 
 class FormProducts extends Component
 {
 
-    public $img;
+    use WithFileUploads;
+
     public $name;
     public $description;
     public $category;
     public $condition;
     public $price;
 
+    public $temporary_images;
+    public $images = [];
+
     public $categories;
     public $conditions;
     
     protected $rules = [
-        // "img"=>'image',
         "name"=>'required|min:5',
         "description"=>'required|min:10|max:255',
         "category"=>'required',
         "condition"=>'required',
         "price"=>'required|decimal:0,2',
+        "temporary_images.*"=>'image|max:1024',
+        "images"=>'image|max:1024'
 
     ];
 
      protected $messages = [
-        "required"=>"Il campo :attribute è necessario",
-       "min"=>"Il campo :attribute ha un numero insufficiente di caratteri",
-        "max"=>"Il campo :attribute deve contenere massimo 255 caratteri",
+        "required"=>"Il campo è necessario",
+        "min"=>"Il campo ha un numero insufficiente di caratteri",
+        "max"=>"Il campo deve contenere massimo 255 caratteri",
+        "temporary_images.*.image"=>'Il file deve essere un immagine',
+        "temporary_images.*.max"=>'Il file deve essere massimo di 1mb',
+        "images.image"=>'Il file deve essere un immagine',
+        "images.max"=>'Il file deve essere massimo di 1mb',
+
         
         
     ];
@@ -46,7 +57,6 @@ class FormProducts extends Component
         $condition = Condition::find($this->condition);
 
         $product = $category->products()->create([
-        'img' => $this->img ? $this->img->store('public/images') : 'public/images/default.png',     
         'name' => $this->name,
         'description' => $this->description,
         'user_id' => Auth::user()->id,     

@@ -4,16 +4,17 @@ namespace App\Models;
 
 use App\Models\User;
 
+use App\Models\Image;
 use App\Models\Category;
 use App\Models\Condition;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
     use HasFactory, Searchable;
-    protected $fillable=['img','name','description','category','condition','price','user_id', 'category_id' ];
+    protected $fillable=['name','description','category','condition','price','user_id', 'category_id' ];
 
     public function toSearchableArray(){
         $condition= $this->condition;
@@ -38,6 +39,11 @@ class Product extends Model
     public function condition(){
         return $this->belongsTo(Condition::class);
     }
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
+
     public static function toBeRevisionedCount(){
         return Product::where('is_accepted', null)->count();
        }
