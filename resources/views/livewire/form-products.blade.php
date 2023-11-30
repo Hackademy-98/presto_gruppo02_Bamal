@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12 p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 col-md-7 mt-3">                    
                 
-                    <form wire:submit.prevent='store'>
+                    <form wire:submit.prevent="store">
                         <div class="mb-3">
                             <label for="name" class="form-label fs-5 t-b">Nome</label>
                             <input type="text" class="form-control" id="name" name="name" wire:model='name'>
