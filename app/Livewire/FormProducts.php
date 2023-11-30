@@ -33,7 +33,8 @@ class FormProducts extends Component
         "condition"=>'required',
         "price"=>'required|decimal:0,2',
         "temporary_images.*"=>'image|max:1024',
-        "images"=>'image|max:1024'
+        "images.*"=>'image|max:1024'
+
 
     ];
 
@@ -46,13 +47,24 @@ class FormProducts extends Component
         "images.image"=>'Il file deve essere un immagine',
         "images.max"=>'Il file deve essere massimo di 1mb',
 
-        
-        
     ];
 
+    public function updatedTemporaryImages(){
+        if ($this->validate(['temporary_images.*'=>'image|max:1024'])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
+    public function removeImage($key){
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
     public function store(){
         $this->validate();
-        if(Auth::user()){   
+
         $category = Category::find($this->category);   
         $condition = Condition::find($this->condition);
 
@@ -64,13 +76,21 @@ class FormProducts extends Component
         ]);
         
         $condition->products()->save($product);
+
+        if(count($this->images)){
+            foreach ($this->images as $image) {
+                $product->images()->create(['path'=>$image->store('images', 'public')]);
+            }
+
+        $product->user()->associate(Auth::user());
+
+        $product->save();
+        }
         
 
         $this->reset();
         session()->flash('success', 'Annuncio creato con successo');
-    }else{
-        session()->flash('error', 'Non sei autorizzato');
-    }
+    
         
     }
 
