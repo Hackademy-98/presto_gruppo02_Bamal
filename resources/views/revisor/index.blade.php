@@ -18,6 +18,15 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 <div id="carouselExample" class="carousel slide">
+                    @if($announcementToCheck->images)
+                    <div class="carousel-inner">
+                        @foreach($announcementToCheck->images as $image)
+                        <div class="carousel-item @if($loop->first) active @endif">
+                            <img class="img-fluid p-3 rounded" src="{{Storage::url($image->path)}}" alt="">
+                        </div>
+                        @endforeach
+                    </div>
+                    @else
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="/media/prova.jpg" class="d-block w-100" alt="...">
@@ -29,6 +38,7 @@
                             <img src="/media/prova.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
+                    @endif
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>

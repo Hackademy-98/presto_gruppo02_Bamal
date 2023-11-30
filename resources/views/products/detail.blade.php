@@ -8,17 +8,27 @@
           <div class="col-2 col-md-1"></div>
           <div class="col-12 col-md-5 d-flex mt-5">
             <div id="carouselExample" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="/media/prova.jpg" class="d-block w-100 rounded-5" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/media/prova.jpg" class="d-block w-100 rounded-5" alt="...">
-                </div>
-                <div class="carousel-item">
-                  <img src="/media/prova.jpg" class="d-block w-100 rounded-5" alt="...">
-                </div>
-              </div>
+              @if($product->images)
+                    <div class="carousel-inner">
+                        @foreach($product->images as $image)
+                        <div class="carousel-item @if($loop->first) active @endif">
+                            <img class="img-fluid p-3 rounded" src="{{Storage::url($image->path)}}" alt="">
+                        </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/media/prova.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/prova.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/media/prova.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    @endif
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
