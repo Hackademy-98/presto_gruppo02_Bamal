@@ -16,7 +16,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('index') }}">{{ __('ui.announcements') }}</a>
                     </li>
-                    <li><a class="nav-link" href="{{ route('auth.contact') }}">Lavora con noi</a></li>
+                    <li><a class="nav-link" href="{{ route('auth.contact') }}">{{ __('ui.workWithUs') }}</a></li>
                     {{-- Bandierine --}}
                     <div class="dropdown">
                         <button class="dropdown-toggle nav-link" type="button" data-bs-toggle="dropdown"
@@ -33,7 +33,8 @@
                     @auth
                         @if (Auth::user()->is_revisor)
                             <li class="nav-item">
-                                <a class="nav-link position-relative " href="{{ route('revisor.index') }}">Menù revisore
+                                <a class="nav-link position-relative "
+                                    href="{{ route('revisor.index') }}">{{ __('ui.revisorMenù') }}
                                     <span
                                         class=" position-absolute top-1 start-100 translate-middle badge rounded-pill bg-o">{{ App\Models\Product::toBeRevisionedCount() }}
                                         <span class="visually-hidden">unread message</span>
@@ -62,7 +63,8 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end bg-b">
                                 <li><a class="dropdown-item t-n" href="{{ route('auth.dashboard') }}">Dashboard</a></li>
-                                <li><a class="dropdown-item t-n" href="{{ route('products.create') }}">Nuovo annuncio</a>
+                                <li><a class="dropdown-item t-n"
+                                        href="{{ route('products.create') }}">{{ __('ui.newAnnouncement') }}</a>
                                 </li>
 
                                 <form class="ps-1" action="{{ route('logout') }}" method="POST">

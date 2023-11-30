@@ -9,9 +9,9 @@
             @endif
 
             <div class="col-12 mt-5">
-                <h1 class="mt-5 pt-3 t-b text-center fw-semibold">Area revisore</h1>
+                <h1 class="mt-5 pt-3 t-b text-center fw-semibold">{{ __('ui.revisorArea') }}</h1>
                 <h2 class="t-o text-center my-3">
-                    {{ $announcementToCheck ? 'Ecco gli annunci da revisionare:' : 'Non ci sono annunci da revisionare' }}
+                    {{ $announcementToCheck ? __('ui.hereAreTheAdsToReview') : __('ui.thereAreNoAdsToReview') }}
                 </h2>
 
             </div>
@@ -24,7 +24,8 @@
                             <div class="carousel-inner">
                                 @foreach ($announcementToCheck->images as $image)
                                     <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img class="img-fluid p-3 rounded" src="{{ $announcementToCheck->images()->first()->getUrl(400, 300)}}"
+                                        <img class="img-fluid p-3 rounded"
+                                            src="{{ $announcementToCheck->images()->first()->getUrl(400, 300) }}"
                                             alt="">
                                     </div>
                                 @endforeach
@@ -58,7 +59,8 @@
                         method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn rounded-5 btn-outline-success w-25 shadow">Accetta</button>
+                        <button type="submit"
+                            class="btn rounded-5 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
                     </form>
                 </div>
                 <div class="col-12 div col-md-5 col-lg-5 text-center">
@@ -66,7 +68,8 @@
                         method="POST">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn rounded-5 btn-outline-danger w-25 shadow">Rifiuta</button>
+                        <button type="submit"
+                            class="btn rounded-5 btn-outline-danger w-25 shadow">{{ __('ui.refuseButton') }}</button>
                     </form>
                 </div>
         @endif
@@ -75,12 +78,13 @@
     <div class="container-fluid vh-100 my-5 pt-5">
         <div class="row justify-content-center my-5">
             <div class="col-12 my-5 pt-5">
-                <h2 class="text-center t-b fw-semibold fs-1">Cronologia</h2>
+                <h2 class="text-center t-b fw-semibold fs-1">{{ __('ui.history') }}</h2>
             </div>
             @foreach ($announcementsChecked as $product)
                 <div class="col-12 col-md-3 d-flex justify-content-center">
                     <div class="card card-custom shadow p-3" style="width: 18rem;">
-                        <img src="{{!$product->images()->get()->isEmpty() ? $product->images()->first()->getUrl(400, 300) : "/media/default.png"}}" class="card-img-top" alt="...">
+                        <img src="{{ !$product->images()->get()->isEmpty()? $product->images()->first()->getUrl(400, 300): '/media/default.png' }}"
+                            class="card-img-top" alt="...">
 
                         <div class="card-body p-0">
                             <div>
@@ -99,7 +103,7 @@
                                         @csrf
                                         @method('delete')
                                         <button type="submit"
-                                            class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
+                                            class="btn rounded-2 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
                                     </form>
                                 </divm>
                             @else
@@ -110,13 +114,13 @@
                                         @csrf
                                         @method('PATCH')
                                         <button type="submit"
-                                            class="btn rounded-2 btn-outline-success shadow">Accetta</button>
+                                            class="btn rounded-2 btn-outline-success shadow">{{ __('ui.acceptButton') }}</button>
                                     </form>
                                     <form action="{{ route('products.destroy', compact('product')) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit"
-                                            class="btn rounded-2 btn-outline-danger shadow">Cancella</button>
+                                            class="btn rounded-2 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
                                     </form>
                                 </div>
                             @endif
