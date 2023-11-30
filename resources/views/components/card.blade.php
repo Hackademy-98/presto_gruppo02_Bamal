@@ -1,6 +1,6 @@
 
     <div class="card card-custom shadow p-3" style="width: 18rem;">
-        <img src="{{!$product->images()->get()->isEmpty() ? Storage::url($product->images()->first()->path) : '/media/default.png'}}" class="card-img-top" alt="...">
+        <img src="{{!$product->images()->get()->isEmpty() ? Storage::url($product->images()->first()->path) : "/media/default.png"}}" class="card-img-top" alt="...">
 
         <div class="card-body p-0">
           <div>
