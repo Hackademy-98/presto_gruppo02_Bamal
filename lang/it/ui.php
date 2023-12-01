@@ -82,4 +82,8 @@ return [
 
 'about'=>'Info',
 'services'=>'Servizi',
+
+//!Category id
+'1'=>'suitcase',
+'2'=>'money-bill'
 ];
