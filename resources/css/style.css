@@ -550,12 +550,14 @@ input {
     background-position-x: 13vw;
     object-fit: cover;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 .sfondoRegister {
     background-image: url("/public/media/sfondoReg-03.png");
     background-position-x: 13vw;
     object-fit: cover;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .sfondoCreate {
@@ -563,22 +565,28 @@ input {
     background-position-x: 3vw;
     object-fit: cover;
     background-size: contain;
+    background-repeat: no-repeat;
+    
 }
 .sfondoLavora {
     background-image: url("/public/media/sfondoLavora-02.png");
     background-position-x: 3vw;
     object-fit: cover;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 .sfondoAnnunci {
     background-image: url("/public/media/sfondoAnnunci-02.png");
     background-size: cover;
     height: 32rem;
+    background-repeat: no-repeat;
 }
 .sfondoDashboard {
     background-image: url("/public/media/sfondoDashboard-03.png");
-    background-size: cover;
+    background-size: cover;    
     height: 25rem;
+    background-repeat: no-repeat;
+    
 }
 
 /* BANDIERINE*/
@@ -604,3 +612,9 @@ input {
     background-position: center;
 }
 
+.icone{
+    transition-duration: 0.7s;
+}
+.icone:hover{
+    transform: scale(1.5);
+}

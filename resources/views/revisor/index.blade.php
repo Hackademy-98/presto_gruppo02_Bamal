@@ -48,10 +48,10 @@
             </div>
             <div class="row justify-content-center pb-5">
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-                    <h5 class="card-title mt-5">Titolo : {{ $announcementToCheck->name }}</h5>
-                    <p class="card-text my-2 text-wrap description-box w-50 text-center"> Descrizione :
+                    <h5 class="card-title mt-5 t-b">{{ __('ui.name') }} : {{ $announcementToCheck->name }}</h5>
+                    <p class="card-text my-2 t-b text-wrap description-box w-50 text-center"> {{ __('ui.description') }}:
                         {{ $announcementToCheck->description }}</p>
-                    <p class="card-footer">Pubblicato il : {{ $announcementToCheck->created_at->format('d/m/Y') }} da:
+                    <p class="card-footer t-b">{{ __('ui.createIn') }}: {{ $announcementToCheck->created_at->format('d/m/Y') }} {{ __('ui.from') }}:
                         {{ Auth::User()->name }} </p>
                 </div>
                 <div class="col-12 div col-md-5 col-lg-5 text-center">

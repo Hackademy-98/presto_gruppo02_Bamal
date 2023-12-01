@@ -84,6 +84,7 @@ return [
         'createIn'=>'Creado el',
         'createBy'=>'Creado por',
         'mainData'=>'Informaciones principales',
+        'from'=>'por',
         'condition'=>'Condiciones',
         //todo condizioni eventuali
 

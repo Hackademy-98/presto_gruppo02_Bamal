@@ -2,7 +2,7 @@
 
     <div class="container-fluid vh-100  sfondoLogin">        
         <div class="row pt-5 justify-content-center mt-5">
-            <div class="col-12 card p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 col-md-5 mt-5">
+            <div class="col-11 col-md-5 card p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 mt-5">
                 <h1 class="pb-3 t-b fw-">{{ __('ui.login') }}</h1>
                 <form action="{{ route('login') }}" method="POST">
                     @csrf

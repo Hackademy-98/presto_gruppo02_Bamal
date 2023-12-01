@@ -75,6 +75,7 @@ return [
 'createIn'=>'Creato il',
 'createBy'=>'Creato da',
 'mainData'=>'Info Principali',
+'from'=>'da',
 'condition'=>'Condizione',
 //todo condizioni eventuali
 'thereAreNoAds'=>'Non ci sono annunci per questa ricerca',

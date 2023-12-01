@@ -94,6 +94,7 @@ return [
     //todo categorie eventuali
     'createIn'=>'Create in',
     'createBy'=>'Create by',
+    'from'=>'from',
     'mainData'=>'Main data',
     'condition'=>'Condition',
     //todo condizioni eventuali

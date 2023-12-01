@@ -39,7 +39,7 @@
                         aria-expanded="false">
                         <i class="fa-solid fa-globe globo" style="color: #f5f5f5;"></i>
                     </button>
-                    <ul class="dropdown-menu bg-b">
+                    <ul class="dropdown-menu bg-b pb-0">
                         <li class="dropdown-item t-n"> <x-_locale lang="it" />IT</li>
                         <li class="dropdown-item t-n"> <x-_locale lang="en" />EN</li>
                         <li class="dropdown-item t-n"> <x-_locale lang="es" />ES</li>
