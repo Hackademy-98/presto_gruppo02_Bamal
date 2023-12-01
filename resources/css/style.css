@@ -79,6 +79,8 @@
     font-size: 4vw;
 }
 
+/* FOOTER */
+
 .footer {
     position: relative;
     width: 100%;
@@ -256,7 +258,7 @@ input {
 
 .btn-custom {
     color: rgb(229, 62, 2);
-    background-color: #ffe4be;
+    background-color: #ffe8c7;
 }
 .btn-custom:hover {
     background-color: var(--o);
@@ -599,12 +601,4 @@ input {
     background-size: cover;
     background-position: center;
 }
-.inputCustom{
-    width: 95%;
-}
-.icone{
-    transition-duration: 0.7s;
-}
-.icone:hover{
-    transform: scale(1.5);
-}
+

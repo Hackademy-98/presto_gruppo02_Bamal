@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid vh-100">
+    <div class="container-fluid min-vh-100 mb-5 pb-5 ">
 
         <div class="row">
             @if (session('success'))
@@ -18,7 +18,7 @@
         </div>
         @if ($announcementToCheck)
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-6 d-flex justify-content-center">
                     @if ($announcementToCheck->images->isNotEmpty())
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
@@ -49,7 +49,7 @@
             <div class="row justify-content-center pb-5">
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center">
                     <h5 class="card-title mt-5">Titolo : {{ $announcementToCheck->name }}</h5>
-                    <p class="card-text my-2 text-wrap description-box"> Descrizione :
+                    <p class="card-text my-2 text-wrap description-box w-50 text-center"> Descrizione :
                         {{ $announcementToCheck->description }}</p>
                     <p class="card-footer">Pubblicato il : {{ $announcementToCheck->created_at->format('d/m/Y') }} da:
                         {{ Auth::User()->name }} </p>
@@ -93,17 +93,17 @@
                             <p class="text-body"><a class="text-decoration-none cardLink t-b fs-5"
                                     href="{{ route('products.filterByCategory', ['category' => $product->category]) }}">{{ __('ui.$product->category' . '->name') }}</a>
                             </p>
-                            <p class="text-title fs-6 card-div"><span class="t-b">{{ __('ui.description') }}:</span>
+                            <p class="text-title fs-6 card-div text-truncate"><span class="t-b">{{ __('ui.description') }}:</span>
                                 <br>{{ $product->description }}
                             </p>
 
                             @if ($product->is_accepted)
-                                <divm class="d-flex justify-content-center">
+                                <divm class="d-flex justify-content-center align-items-end">
                                     <form action="{{ route('products.destroy', compact('product')) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit"
-                                            class="btn rounded-2 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
+                                            class="btn rounded-5 btn-outline-danger shadow ">{{ __('ui.cancelButton') }}</button>
                                     </form>
                                 </divm>
                             @else
@@ -114,13 +114,13 @@
                                         @csrf
                                         @method('PATCH')
                                         <button type="submit"
-                                            class="btn rounded-2 btn-outline-success shadow">{{ __('ui.acceptButton') }}</button>
+                                            class="btn rounded-5 btn-outline-success shadow">{{ __('ui.acceptButton') }}</button>
                                     </form>
                                     <form action="{{ route('products.destroy', compact('product')) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit"
-                                            class="btn rounded-2 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
+                                            class="btn rounded-5 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
                                     </form>
                                 </div>
                             @endif
