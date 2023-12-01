@@ -42,7 +42,7 @@
                             </button>
                         </div>
                     @else
-                        <img src="/media/default.png" class="img-fluid p-3 rounded" alt="...">
+                        <img src="/media/default.png" class="img-fluid w-75 p-3 rounded" alt="...">
                     @endif
                 </div>
             </div>
@@ -77,23 +77,24 @@
     </div>
     <div class="container-fluid vh-100 my-5 pt-5">
         <div class="row justify-content-center my-5">
-            <div class="col-12 my-5 pt-5">
+            <div class="col-12 my-5 pt-5 ">
                 <h2 class="text-center t-b fw-semibold fs-1">{{ __('ui.history') }}</h2>
             </div>
-            @foreach ($announcementsChecked as $product)
-                <div class="col-12 col-md-3 d-flex justify-content-center">
+            <div class="col-12 d-flex flex-wrap justify-content-center my-3 gap-4">
+                @foreach ($announcementsChecked as $product)
                     <div class="card card-custom shadow p-3" style="width: 18rem;">
                         <img src="{{ !$product->images()->get()->isEmpty()? $product->images()->first()->getUrl(400, 300): '/media/default.png' }}"
                             class="card-img-top" alt="...">
 
                         <div class="card-body p-0">
                             <div>
-                                <h5 class="card-title mt-3 t-o fw-bolder">{{ $product->name }}</h5>
+                                <h5 class="card-title mt-3 t-o fw-bolder text-truncate">{{ $product->name }}</h5>
                             </div>
                             <p class="text-body"><a class="text-decoration-none cardLink t-b fs-5"
                                     href="{{ route('products.filterByCategory', ['category' => $product->category]) }}">{{ __('ui.' . $product->category->name) }}</a>
                             </p>
-                            <p class="text-title fs-6 card-div text-truncate"><span class="t-b">{{ __('ui.description') }}:</span>
+                            <p class="text-title fs-6 card-div text-truncate"><span
+                                    class="t-b">{{ __('ui.description') }}:</span>
                                 <br>{{ $product->description }}
                             </p>
 
@@ -126,8 +127,8 @@
                             @endif
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
         <div class="container-fluid mt-5">
             <div class="row justify-content-center">

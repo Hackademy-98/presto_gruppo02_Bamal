@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid sfondoAnnunci">
+    <div class="container-fluid sfondoAnnuncis">
         <div class="row justify-content-center pt-5">
             <div class="col col-12 mt-5 text-center">
                 <h2 class="text-center mt-5 pt-3 t-o fs-1 ">{{ __('ui.allAnnouncements') }}</h2>

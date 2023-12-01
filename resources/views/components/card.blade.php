@@ -4,7 +4,7 @@
 
     <div class="card-body p-0">
         <div>
-            <h5 class="card-title mt-3 t-o fw-bolder">{{ $product->name }}</h5>
+            <h5 class="card-title mt-3 t-o fw-bolder text-truncate">{{ $product->name }}</h5>
         </div>
         <p class="text-body"><a class="text-decoration-none cardLink t-b fs-5"
                 href="{{ route('products.filterByCategory', ['category' => $product->category]) }}">{{ __("ui.$category->name") }}</a>
