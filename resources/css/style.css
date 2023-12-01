@@ -602,5 +602,9 @@ input {
 .inputCustom{
     width: 95%;
 }
-
-
+.icone{
+    transition-duration: 0.7s;
+}
+.icone:hover{
+    transform: scale(1.5);
+}

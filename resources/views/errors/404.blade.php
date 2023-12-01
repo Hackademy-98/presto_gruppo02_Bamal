@@ -1,9 +1,9 @@
 <x-layout>
 
-  <body class=" bg-light vh-100">
-    <div class="container-fluid d-">
+  
+    <div class="container-fluid vh-100">
         <div class="row justify-content-center align-item-center my-5">
-            <div class="col-8 my-5">
+            <div class="col-7 mt-5">
                 
                     <div class="wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
                         <title>404</title>
@@ -135,11 +135,10 @@
                 </div>
                 
             </div>
-            <div class="col-12 d-flex justify-content-center"> 
+            <div class="col-12 t-b d-flex justify-content-center"> 
                 <h1> {{ __('ui.error404') }} </h1></div>
         </div>
     </div>
-</body>
-</html>
+
 
 </x-layout>
