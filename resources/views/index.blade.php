@@ -26,6 +26,9 @@
 
                 @foreach ($categories as $category)
                     <div class="col-3 flex-wrap d-flex col-md-1 rounded-5 ">
+                        <div class="{{ __("ui.$category->name") }}">
+
+                        </div>
                         <a class="box_categories btn btn-custom rounded-5 d-flex justify-content-center align-items-center"
                             href="{{ route('products.filterByCategory', compact('category')) }}">{{ __("ui.$category->name") }}</a>
                     </div>

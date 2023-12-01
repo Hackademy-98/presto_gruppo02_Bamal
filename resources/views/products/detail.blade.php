@@ -2,7 +2,7 @@
     <div class="container-fluid d-flex align-items-center justify-content-center detail-container">
         <div class="row h-50 justify-content-center">
           <div class="col-12 mt-3">
-            <h2 class="text-center mt-5 pt-5 fs-1 t-b">INFO articolo</h2>
+            <h2 class="text-center mt-5 pt-5 fs-1 t-b">{{ __('ui.articleInfo') }}</h2>
           </div>
          
           <div class="col-2 col-md-1"></div>
@@ -44,8 +44,8 @@
                   <div>
                     <p class="fs-4 text-uppercase t-b">{{$product->category->name}}</p>
                     <hr>
-                    <p class="t-b mb-1">Creato il: {{ $product->created_at->format('d/m/Y') }}</p>
-                    <p class="t-b">Creato da: {{$product->user->name}}</p>
+                    <p class="t-b mb-1">{{ __('ui.createIn') }}: {{ $product->created_at->format('d/m/Y') }}</p>
+                    <p class="t-b">{{ __('ui.createBy') }}: {{$product->user->name}}</p>
                       <h3 class="fw-semibold fs-2 t-b">{{$product->name}}</h3>
                     </div>
                   <div>
@@ -54,13 +54,13 @@
               </div>
               <div class="col-2 col-md-1"></div>
               <div class="col-12 col-md-5">
-                <h2 class="mt-4 mb-3 t-b">Dati principali</h2>
+                <h2 class="mt-4 mb-3 t-b">{{ __('ui.mainData') }}</h2>
                 <div class="d-flex gap-3">
-                  <p class="t-b">Condizione:</p>
+                  <p class="t-b">{{ __('ui.condition') }}:</p>
                   <p>{{$product->condition->name}}</p>
                 </div>
                 <hr>
-                <h2 class="mt-3 mb-4 t-b">Descrizione</h2>
+                <h2 class="mt-3 mb-4 t-b">{{ __('ui.description') }}</h2>
                 <p>{{$product->description}}</p>
               </div>
               <div class="col-12 col-md-2"></div> 

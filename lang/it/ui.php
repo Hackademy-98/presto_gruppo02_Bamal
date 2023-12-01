@@ -8,11 +8,13 @@ return [
     'login' => 'Accedi',
     'register' => 'Registrati',
     'logout' => 'Disconnettiti',
-    'detailButton' => 'Dettaglio',
+    'dashboard'=>'Dashboard',
+    'detailButton' => 'Dettaglio',    
     'latestAnnouncements'=> 'Ultimi Annunci',
     'allAnnouncements'=>'Tutti gli Annunci',
     'search'=>'Ricerca',
     'category'=>'Categoria',
+    'categories'=>'Categorie',
     'username'=>'Nome Utente',
     'emailAddress'=> 'Indirizzo Email',
     'whyYouChooseUs'=>'Perchè ci hai scelto?',
@@ -42,6 +44,10 @@ return [
      'Animali'=>'Animali',
      'Fai da te'=>'Fai da te',
      'Beauty'=>'Beauty',
+
+     'explore'=>'Esplora',
+     'NoAnnouncements'=>'Non ci sono annunci per la categoria ',
+     'createOne'=>'Creane uno',
  
      //!Condizioni
      'condionLabel'=>'Condizioni',
@@ -60,17 +66,20 @@ return [
 
     //!Register
    
-    'passwordConfirmation'=>'Password confirmation',
+    'passwordConfirmation'=>'Conferma password',
     'submitLogin'=>'Accedi',
 'submitSignIn'=>'Registrati',
 //!Card
 'articleInfo'=>'Informazioni Articolo',
 //todo categorie eventuali
-'createIn'=>'Creato Il',
-'createBy'=>'Creato Da',
+'createIn'=>'Creato il',
+'createBy'=>'Creato da',
 'mainData'=>'Info Principali',
 'condition'=>'Condizione',
 //todo condizioni eventuali
 'thereAreNoAds'=>'Non ci sono annunci per questa ricerca',
 'thereAreNoAdsToReview' =>'Non ci sono annunci da revisionare',
+
+'about'=>'Info',
+'services'=>'Servizi',
 ];

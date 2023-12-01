@@ -7,10 +7,11 @@ return [
     'workWithUs' => 'Work with us',
     'revisorMenù' => 'Revisor Menù',
     'newAnnouncement' => 'New announcement',
-    'addAnnouncement'=> 'Add announcement',
+    'insertAnnouncement'=> 'Add announcement',
     'login' => 'Login',
     'register' => 'Sign in',
     'logout' => 'Logout',
+    'dashboard'=>'Dashboard',
 
 
     //!Sezione annunci
@@ -58,6 +59,10 @@ return [
     'Animali'=>'Pet',
     'Fai da te'=>'DIY',
     'Beauty'=>'Beauty',
+
+    'explore'=>'Explore',
+    'NoAnnouncements'=>'No announcements found for the category ',
+    'createOne'=>'Create one',
     
     //!Condizioni
     'condionLabel'=>'Condition',
@@ -93,6 +98,9 @@ return [
     'condition'=>'Condition',
     //todo condizioni eventuali
     'detailButton' => 'detail',
+
+    'about'=>'About',
+    'services'=>'Services',
 
 
 

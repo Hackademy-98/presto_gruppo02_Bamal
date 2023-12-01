@@ -9,7 +9,7 @@
                 <h1 class="t-b m-0 h1-home ms-md-5 ">PRESTO</h1>
                 <h2 class="t-b">{{ __('ui.subtitle') }}</h2>
                 <a class="btn fs-5 text-white btnOrange mt-3 rounded-5 bg-o"
-                    href="{{ route('products.create') }}">{{ __('ui.addAnnouncement') }}</a>
+                    href="{{ route('products.create') }}">{{ __('ui.insertAnnouncement') }}</a>
             </div>
         </div>
     </header>

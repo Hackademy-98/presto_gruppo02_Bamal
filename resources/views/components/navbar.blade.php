@@ -48,10 +48,10 @@
                 @guest
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('ui.login') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('ui.register') }}</a>
                         </li>
                     </ul>
                 @else
@@ -62,14 +62,14 @@
                                 {{ Auth::User()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end bg-b">
-                                <li><a class="dropdown-item t-n" href="{{ route('auth.dashboard') }}">Dashboard</a></li>
+                                <li><a class="dropdown-item t-n" href="{{ route('auth.dashboard') }}">{{ __('ui.dashboard') }}</a></li>
                                 <li><a class="dropdown-item t-n"
                                         href="{{ route('products.create') }}">{{ __('ui.newAnnouncement') }}</a>
                                 </li>
 
                                 <form class="ps-1" action="{{ route('logout') }}" method="POST">
                                     @csrf
-                                    <button class="btn t-o">Logout</button>
+                                    <button class="btn t-o">{{ __('ui.logout') }}</button>
                                 </form>
                             </ul>
                         </li>

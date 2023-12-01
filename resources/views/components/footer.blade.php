@@ -21,10 +21,10 @@
   </ul>
   <ul class="menu">
     <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-    <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-    <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+    <li class="menu__item"><a class="menu__link" href="#">{{ __('ui.about') }}</a></li>
+    <li class="menu__item"><a class="menu__link" href="#">{{ __('ui.services') }}</a></li>
     <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-    <li class="menu__item"><a class="menu__link" href="{{ route('auth.contact') }}">Lavora con noi</a></li>
+    <li class="menu__item"><a class="menu__link" href="{{ route('auth.contact') }}">{{ __('ui.workWithUs') }}</a></li>
 
   </ul>
   <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
