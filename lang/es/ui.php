@@ -95,4 +95,19 @@ return [
 
         'about'=>'Acerca de',
         'services'=>'Servicios',
+
+        //!Category id
+'1'=>'couch',
+'2'=>'desktop',
+'3'=>'bicycle',
+'4'=>'music',
+'5'=>'shirt',
+'6'=>'book',
+'7'=>'gamepad',
+'8'=>'paw',
+'9'=>'screwdriver-wrench',
+'10'=>'wand-magic-sparkles',
+
+//!Error message
+'error404'=>'Error! Página no encontrada'
 ];

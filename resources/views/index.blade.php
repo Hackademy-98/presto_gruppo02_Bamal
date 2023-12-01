@@ -25,8 +25,10 @@
             <div class="col-12 d-flex justify-content-center mb-5 mt-4 gap-3">
 
                 @foreach ($categories as $category)
-                    <div class="col-3 flex-wrap d-flex col-md-1 rounded-5 ">
-                        <div><i class="fa-solid fa-{{ __("ui.$category->id") }}"></i></div>
+                    <div class="col-3 flex-wrap d-flex col-md-1 rounded-5 justify-content-center">
+                        <div class="my-2">
+                            <i class="fa-solid t-o fs-2 fa-{{ __("ui.$category->id") }}"></i>
+                        </div>
                         <a class="box_categories btn btn-custom rounded-5 d-flex justify-content-center align-items-center"
                             href="{{ route('products.filterByCategory', compact('category')) }}">{{ __("ui.$category->name") }}</a>
                     </div>
