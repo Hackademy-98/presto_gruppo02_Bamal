@@ -17,18 +17,7 @@
                         <a class="nav-link" href="{{ route('index') }}">{{ __('ui.announcements') }}</a>
                     </li>
                     <li><a class="nav-link" href="{{ route('auth.contact') }}">{{ __('ui.workWithUs') }}</a></li>
-                    {{-- Bandierine --}}
-                    <div class="dropdown">
-                        <button class="dropdown-toggle nav-link" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="fa-solid fa-globe globo" style="color: #f5f5f5;"></i>
-                        </button>
-                        <ul class="dropdown-menu bg-b">
-                            <li class="dropdown-item t-n"> <x-_locale lang="it" />IT</li>
-                            <li class="dropdown-item t-n"> <x-_locale lang="en" />EN</li>
-                            <li class="dropdown-item t-n"> <x-_locale lang="es" />ES</li>
-                        </ul>
-                    </div>
+
 
                     @auth
                         @if (Auth::user()->is_revisor)
@@ -44,7 +33,18 @@
                         @endif
                     @endauth
                 </ul>
-
+                {{-- Bandierine --}}
+                <div class="dropdown mx-2">
+                    <button class="dropdown-toggle nav-link" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-globe globo" style="color: #f5f5f5;"></i>
+                    </button>
+                    <ul class="dropdown-menu bg-b">
+                        <li class="dropdown-item t-n"> <x-_locale lang="it" />IT</li>
+                        <li class="dropdown-item t-n"> <x-_locale lang="en" />EN</li>
+                        <li class="dropdown-item t-n"> <x-_locale lang="es" />ES</li>
+                    </ul>
+                </div>
                 @guest
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -62,7 +62,8 @@
                                 {{ Auth::User()->name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end bg-b">
-                                <li><a class="dropdown-item t-n" href="{{ route('auth.dashboard') }}">{{ __('ui.dashboard') }}</a></li>
+                                <li><a class="dropdown-item t-n"
+                                        href="{{ route('auth.dashboard') }}">{{ __('ui.dashboard') }}</a></li>
                                 <li><a class="dropdown-item t-n"
                                         href="{{ route('products.create') }}">{{ __('ui.newAnnouncement') }}</a>
                                 </li>
