@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5 gap-4">
             @foreach ($products as $product)
-                <x-card :product='$product' />
+                <x-card :product='$product' :category='$product->category' />
             @endforeach
         </div>
     </div>

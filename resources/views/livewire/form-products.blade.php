@@ -68,7 +68,7 @@
                     <div class="mb-3 input-group">
                         <label for="price" class="form-label"></label>
                         <span class="input-group-text fw-semibold" id="basic-addon1">€</span>
-                        <input type="text" class="form-control" id="price" name="price" wire:model='price'>
+                        <input type="text" class="inputCustom" id="price" name="price" wire:model='price'>
                         @error('price')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror

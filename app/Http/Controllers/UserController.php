@@ -38,6 +38,8 @@ class UserController extends Controller
         if(Auth::user()->email == 'admin@admin'){
             Artisan::call('presto:makeUserRevisor',['email'=>$user->email]);
             return redirect()->route('home')->with('message', 'l\'utente è diventato revisore');
+        } else {
+            return redirect()->route('home')->with('error', 'l\'utente non è autorizzato');
         }
     }
 }

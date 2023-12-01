@@ -40,16 +40,6 @@ class FormProducts extends Component
         
     ];
     
-    protected $messages = [
-        "required"=>"Il campo è necessario",
-        "min"=>"Il campo ha un numero insufficiente di caratteri",
-        "max"=>"Il campo deve contenere massimo 255 caratteri",
-        "temporary_images.*.image"=>'Il file deve essere un immagine',
-        "temporary_images.*.max"=>'Il file deve essere massimo di 1mb',
-        "images.image"=>'Il file deve essere un immagine',
-        "images.max"=>'Il file deve essere massimo di 1mb',
-        
-    ];
     
     public function updatedTemporaryImages(){
         if ($this->validate(['temporary_images.*'=>'image|max:1024'])) {
@@ -97,11 +87,11 @@ class FormProducts extends Component
         
         
         $this->reset();
+        redirect()->route('products.create');
         session()->flash('success', 'Annuncio creato con successo');
         
-        
     }
-    
+
     public function render()
     {
         $this->categories= Category::all();

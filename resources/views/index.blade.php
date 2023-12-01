@@ -35,7 +35,7 @@
 
             <div class="col-12 flex-wrap d-flex gap-4 justify-content-center">
                 @forelse ($products as $product)
-                    <x-card :product='$product' />
+                    <x-card :product='$product' :category='$product->category' />
                 @empty
                     <div class="col-12">
                         <div class="alert alert-warning py-5">

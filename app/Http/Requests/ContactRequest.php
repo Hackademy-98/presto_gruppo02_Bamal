@@ -27,4 +27,5 @@ class ContactRequest extends FormRequest
             'email'=> 'required' 
         ];
     }
+
 }

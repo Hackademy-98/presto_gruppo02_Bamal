@@ -91,7 +91,7 @@
                                 <h5 class="card-title mt-3 t-o fw-bolder">{{ $product->name }}</h5>
                             </div>
                             <p class="text-body"><a class="text-decoration-none cardLink t-b fs-5"
-                                    href="{{ route('products.filterByCategory', ['category' => $product->category]) }}">{{ __('ui.$product->category' . '->name') }}</a>
+                                    href="{{ route('products.filterByCategory', ['category' => $product->category]) }}">{{ __('ui.' . $product->category->name) }}</a>
                             </p>
                             <p class="text-title fs-6 card-div"><span class="t-b">{{ __('ui.description') }}:</span>
                                 <br>{{ $product->description }}
@@ -128,6 +128,13 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
+                    {{ $announcementsChecked->links() }}
+                </div>
+            </div>
         </div>
     </div>
 
