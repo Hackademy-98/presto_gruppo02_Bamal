@@ -16,6 +16,34 @@
 
             </div>
         </div>
+        {{-- CHECK PERICOLOSITA' IMG --}}
+        @if($announcementToCheck)
+        @foreach ($announcementToCheck->images as $image)        
+        <div class="col-md-3 border-end">
+            <h5 class="tc-accent mt-3">Tags</h5>
+            <div class="p-2">
+                @if ($image->labels)
+                <p class="d-inline">
+                @foreach ($image->labels as $label)
+                {{$label}}
+                @endforeach
+            </p>
+                @endif                                            
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card-body">
+                <h5 class="tc-accent">Revisione immagini</h5>
+                <p>Adulti:<span class="{{$image->adult}}"></span></p>
+                <p>Satira:<span class="{{$image->spoof}}"></span></p>
+                <p>Medicina:<span class="{{$image->medical}}"></span></p>
+                <p>Violenza:<span class="{{$image->violence}}"></span></p>
+                <p>Contenuti ammiccanti:<span class="{{$image->racy}}"></span></p>
+            </div>
+        </div>
+        @endforeach
+        @endif
+
         @if ($announcementToCheck)
             <div class="row justify-content-center">
                 <div class="col-6 d-flex justify-content-center">
@@ -28,6 +56,8 @@
                                             src="{{ $announcementToCheck->images()->first()->getUrl(400, 300) }}"
                                             alt="">
                                     </div>
+                                                                        
+
                                 @endforeach
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
@@ -74,6 +104,9 @@
                 </div>
         @endif
     </div>
+
+    
+
     </div>
     <div class="container-fluid vh-100 my-5 pt-5">
         <div class="row justify-content-center my-5">

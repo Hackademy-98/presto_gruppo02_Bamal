@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Jobs\ResizeImage;
 use App\Models\Condition;
 use Livewire\WithFileUploads;
+use App\Jobs\GoogleVisionSearch;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -77,6 +79,11 @@ class FormProducts extends Component
                 $newImage = $product->images()->create(['path'=>$image->store($newFileName, "public")]);
                 
                 dispatch(new ResizeImage($newImage->path, 400,300));
+
+                dispatch(new GoogleVisionSearch($newImage->id));
+
+                dispatch(new GoogleVisionLabelImage($newImage->id));
+                
             }
             File::deleteDirectory(storage_path('storage\app\livewire-tmp'));
             
