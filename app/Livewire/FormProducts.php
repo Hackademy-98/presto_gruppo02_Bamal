@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionSearch;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
@@ -77,6 +78,8 @@ class FormProducts extends Component
                 $newImage = $product->images()->create(['path'=>$image->store($newFileName, "public")]);
                 
                 dispatch(new ResizeImage($newImage->path, 400,300));
+
+                dispatch(new GoogleVisionSearch($newImage->id));
             }
             File::deleteDirectory(storage_path('storage\app\livewire-tmp'));
             

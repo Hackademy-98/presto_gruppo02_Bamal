@@ -11,6 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
+
 class GoogleVisionSearch implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -35,13 +36,13 @@ class GoogleVisionSearch implements ShouldQueue
         }
         $image = file_get_contents(storage_path("app/public/". $i->path));
 
-        putenv("GOOGLE_APPLICATION_CREDENTIALS =" . base_path("google_credetial.json"));
+        putenv("GOOGLE_APPLICATION_CREDENTIALS=" . base_path("google_credential.json"));
 
         $imageAnnotator = new ImageAnnotatorClient();
 
         $response = $imageAnnotator->safeSearchDetection($image);
 
-        $imageAnnotator-> close();
+        $imageAnnotator->close();
 
         $safe = $response->getSafeSearchAnnotation();
 
@@ -51,15 +52,15 @@ class GoogleVisionSearch implements ShouldQueue
         $violence = $safe->getViolence();
         $racy = $safe->getRacy();
 
-        $likeliHoodName = [
+        $likelihoodName = [
             "text-secondary fas fa-circle", "text-success fas fa-circle", "text-success fas fa-circle", "text-warning fas fa-circle", "text-warning fas fa-circle", "text-danger fas fa-circle",
         ];
 
-        $i->adult = $likeliHoodName[$adult];
-        $i->spoof = $likeliHoodName[$spoof];
-        $i->medical = $likeliHoodName[$medical];
-        $i->violence = $likeliHoodName[$violence];
-        $i->racy = $likeliHoodName[$racy];
+        $i->adult = $likelihoodName[$adult];
+        $i->spoof = $likelihoodName[$spoof];
+        $i->medical = $likelihoodName[$medical];
+        $i->violence = $likelihoodName[$violence];
+        $i->racy = $likelihoodName[$racy];
         $i->save();
         
     }
