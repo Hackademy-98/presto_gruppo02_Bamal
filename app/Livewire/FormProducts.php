@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Condition;
 use Livewire\WithFileUploads;
@@ -78,11 +79,14 @@ class FormProducts extends Component
                 $newFileName = "products/{$product->id}";
                 $newImage = $product->images()->create(['path'=>$image->store($newFileName, "public")]);
                 
-                dispatch(new ResizeImage($newImage->path, 400,300));
+                RemoveFaces::withChain([
 
-                dispatch(new GoogleVisionSearch($newImage->id));
+                new ResizeImage($newImage->path, 400,300),
+                new GoogleVisionSearch($newImage->id),
+                new GoogleVisionLabelImage($newImage->id)
 
-                dispatch(new GoogleVisionLabelImage($newImage->id));
+                ])->dispatch($newImage->id);
+                
                 
             }
             File::deleteDirectory(storage_path('storage\app\livewire-tmp'));

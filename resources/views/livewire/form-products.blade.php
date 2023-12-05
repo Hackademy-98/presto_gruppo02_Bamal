@@ -89,7 +89,7 @@
                                         <div class="col my-3">
                                             <div class="img-preview mx-auto shadow rounded"
                                                 style="background-image: url({{ $image->temporaryUrl() }});"></div>
-                                            <button class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
+                                            <button class="btn btn-danger shadow d-block text-center rounded-5 mt-2 mx-auto"
                                                 type="button"
                                                 wire:click="removeImage({{ $key }})">{{ __('ui.cancelButton') }}</button>
                                         </div>
