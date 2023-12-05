@@ -10,7 +10,7 @@ class RevisorController extends Controller
 {
     public function index(){
         $announcementToCheck = Product::where('is_accepted', null)->first();
-        $announcementsChecked = Product::where('is_accepted', "!=", null)->paginate(8);
+        $announcementsChecked = Product::where('is_accepted', "!=", null)->orderByDesc('created_at')->paginate(8);
 
         return view('revisor.index', compact('announcementToCheck', 'announcementsChecked'));
     }
