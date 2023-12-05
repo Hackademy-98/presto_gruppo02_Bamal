@@ -44,14 +44,14 @@
                                 <div class="carousel-item @if ($loop->first) active @endif">
                                     <img class="img-fluid p-3 rounded" src="{{ $image->getUrl(400, 300) }}"
                                         alt="">
-                                    <div class="col-6">
-                                        <div class="card-body d-flex flex-column align-items-center">
-                                            <h5 class="tc-accent">Revisione immagini</h5>
-                                            <p>Adulti:<span class="{{ $image->adult }}"></span></p>
-                                            <p>Satira:<span class="{{ $image->spoof }}"></span></p>
-                                            <p>Medicina:<span class="{{ $image->medical }}"></span></p>
-                                            <p>Violenza:<span class="{{ $image->violence }}"></span></p>
-                                            <p>Contenuti ammiccanti:<span class="{{ $image->racy }}"></span></p>
+                                    <div class="col-6 d-flex">
+                                        <h5 class="tc-accent">Revisione immagini</h5>
+                                        <div class="card-body d-flex align-items-center flex-wrap gap-3">
+                                            <p>Adulti: <span class="{{ $image->adult }}"></span></p>
+                                            <p>Satira: <span class="{{ $image->spoof }}"></span></p>
+                                            <p>Medicina: <span class="{{ $image->medical }}"></span></p>
+                                            <p>Violenza: <span class="{{ $image->violence }}"></span></p>
+                                            <p>Ambiguo: <span class="{{ $image->racy }}"></span></p>
                                         </div>
                                     </div>
                                 </div>
