@@ -19,90 +19,89 @@
         {{-- CHECK PERICOLOSITA' IMG --}}
         @if ($announcementToCheck)
             @foreach ($announcementToCheck->images as $image)
-                <div class="col-md-3 border-end">
-                    <h5 class="tc-accent mt-3">Tags</h5>
-                    <div class="p-2">
-                        @if ($image->labels)
-                            <p class="d-inline">
-                                @foreach ($image->labels as $label)
-                                    {{ $label }}
-                                @endforeach
-                            </p>
-                        @endif
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card-body">
-                        <h5 class="tc-accent">Revisione immagini</h5>
-                        <p>Adulti:<span class="{{ $image->adult }}"></span></p>
-                        <p>Satira:<span class="{{ $image->spoof }}"></span></p>
-                        <p>Medicina:<span class="{{ $image->medical }}"></span></p>
-                        <p>Violenza:<span class="{{ $image->violence }}"></span></p>
-                        <p>Contenuti ammiccanti:<span class="{{ $image->racy }}"></span></p>
-                    </div>
-                </div>
-            @endforeach
-        @endif
+    </div>
+    </div>
+    {{-- <div class="col-md-3">
+        <div class="card-body">
+            <h5 class="tc-accent">Revisione immagini</h5>
+            <p>Adulti:<span class="{{ $image->adult }}"></span></p>
+            <p>Satira:<span class="{{ $image->spoof }}"></span></p>
+            <p>Medicina:<span class="{{ $image->medical }}"></span></p>
+            <p>Violenza:<span class="{{ $image->violence }}"></span></p>
+            <p>Contenuti ammiccanti:<span class="{{ $image->racy }}"></span></p>
+        </div>
+    </div> --}}
+    @endforeach
+    @endif
 
-        @if ($announcementToCheck)
-            <div class="row justify-content-center">
-                <div class="col-6 d-flex justify-content-center">
-                    @if ($announcementToCheck->images->isNotEmpty())
-                        <div id="carouselExample" class="carousel slide">
-                            <div class="carousel-inner">
-                                @foreach ($announcementToCheck->images as $image)
-                                    <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img class="img-fluid p-3 rounded"
-                                            src="{{ $announcementToCheck->images()->first()->getUrl(400, 300) }}"
-                                            alt="">
+    @if ($announcementToCheck)
+        <div class="row justify-content-center">
+            <div class="col-6 d-flex justify-content-center">
+                @if ($announcementToCheck->images->isNotEmpty())
+                    <div id="carouselExample" class="carousel slide d-flex">
+                        <div class="carousel-inner">
+                            @foreach ($announcementToCheck->images as $image)
+                                <div class="carousel-item @if ($loop->first) active @endif">
+                                    <img class="img-fluid p-3 rounded" src="{{ $image->getUrl(400, 300) }}"
+                                        alt="">
+                                    <div class="col-6">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h5 class="tc-accent">Revisione immagini</h5>
+                                            <p>Adulti:<span class="{{ $image->adult }}"></span></p>
+                                            <p>Satira:<span class="{{ $image->spoof }}"></span></p>
+                                            <p>Medicina:<span class="{{ $image->medical }}"></span></p>
+                                            <p>Violenza:<span class="{{ $image->violence }}"></span></p>
+                                            <p>Contenuti ammiccanti:<span class="{{ $image->racy }}"></span></p>
+                                        </div>
                                     </div>
-                                @endforeach
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                                </div>
+                            @endforeach
                         </div>
-                    @else
-                        <img src="/media/default.png" class="img-fluid w-75 p-3 rounded" alt="...">
-                    @endif
-                </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                @else
+                    <img src="/media/default.png" class="img-fluid w-75 p-3 rounded" alt="...">
+                @endif
             </div>
-            <div class="row justify-content-center pb-5">
-                <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-                    <h5 class="card-title mt-5 t-b">{{ __('ui.name') }} : {{ $announcementToCheck->name }}</h5>
-                    <p class="card-text my-2 t-b text-wrap description-box w-50 text-center">
-                        {{ __('ui.description') }}:
-                        {{ $announcementToCheck->description }}</p>
-                    <p class="card-footer t-b">{{ __('ui.createIn') }}:
-                        {{ $announcementToCheck->created_at->format('d/m/Y') }} {{ __('ui.from') }}:
-                        {{ Auth::User()->name }} </p>
-                </div>
-                <div class="col-12 div col-md-5 col-lg-5 text-center">
-                    <form action="{{ route('revisor.acceptAnnouncement', ['announcement' => $announcementToCheck]) }}"
-                        method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit"
-                            class="btn rounded-5 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
-                    </form>
-                </div>
-                <div class="col-12 div col-md-5 col-lg-5 text-center">
-                    <form action="{{ route('revisor.rejectAnnouncement', ['announcement' => $announcementToCheck]) }}"
-                        method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit"
-                            class="btn rounded-5 btn-outline-danger w-25 shadow">{{ __('ui.refuseButton') }}</button>
-                    </form>
-                </div>
-        @endif
+        </div>
+        <div class="row justify-content-center pb-5">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                <h5 class="card-title mt-5 t-b">{{ __('ui.name') }} : {{ $announcementToCheck->name }}</h5>
+                <p class="card-text my-2 t-b text-wrap description-box w-50 text-center">
+                    {{ __('ui.description') }}:
+                    {{ $announcementToCheck->description }}</p>
+                <p class="card-footer t-b">{{ __('ui.createIn') }}:
+                    {{ $announcementToCheck->created_at->format('d/m/Y') }} {{ __('ui.from') }}:
+                    {{ Auth::User()->name }} </p>
+            </div>
+            <div class="col-12 div col-md-5 col-lg-5 text-center">
+                <form action="{{ route('revisor.acceptAnnouncement', ['announcement' => $announcementToCheck]) }}"
+                    method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit"
+                        class="btn rounded-5 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
+                </form>
+            </div>
+            <div class="col-12 div col-md-5 col-lg-5 text-center">
+                <form action="{{ route('revisor.rejectAnnouncement', ['announcement' => $announcementToCheck]) }}"
+                    method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit"
+                        class="btn rounded-5 btn-outline-danger w-25 shadow">{{ __('ui.refuseButton') }}</button>
+                </form>
+            </div>
+    @endif
     </div>
 
 
