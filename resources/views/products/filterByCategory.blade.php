@@ -1,7 +1,7 @@
 <x-layout>
 
-  <div class="board d-flex align-items-center">
-    <h1 class="ms-5 ps-5 board-text t-o">{{ __("ui.$category->name") }}</h1>
+  <div class="board d-flex align-items-center ">
+    <h1 class="fs-1 mb-5 pb-5 ms-md-5 ps-md-5 board-text t-o ms-5">{{ __("ui.$category->name") }}</h1>
   </div>
   <div class="container-fluid d-flex">
   <div class="row justify-content-center align-items-center my-4 w-100">

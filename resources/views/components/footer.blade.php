@@ -1,4 +1,4 @@
-<div class="footer-custom w-100 p-0">
+<div class="w-100 p-0">
     <footer class="footer">
         <div class="waves">
             <div class="wave" id="wave1"></div>
