@@ -87,14 +87,14 @@
     <div class="row mt-4 w-100 justify-content-center">
 
         @if (session('message'))
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ session('message') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
         @elseif (session('error'))
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ session('error') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

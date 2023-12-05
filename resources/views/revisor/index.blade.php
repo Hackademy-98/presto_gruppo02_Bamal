@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid min-vh-100 mb-5 pb-5 ">
+    <div class="container-fluid mb-5 pb-5 ">
 
         <div class="row">
             @if (session('success'))
@@ -19,8 +19,8 @@
         {{-- CHECK PERICOLOSITA' IMG --}}
         @if ($announcementToCheck)
             @foreach ($announcementToCheck->images as $image)
-    </div>
-    </div>
+    
+    
     {{-- <div class="col-md-3">
         <div class="card-body">
             <h5 class="tc-accent">Revisione immagini</h5>
@@ -36,17 +36,21 @@
 
     @if ($announcementToCheck)
         <div class="row justify-content-center">
-            <div class="col-6 d-flex justify-content-center">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
                 @if ($announcementToCheck->images->isNotEmpty())
                     <div id="carouselExample" class="carousel slide d-flex">
                         <div class="carousel-inner">
                             @foreach ($announcementToCheck->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif">
-                                    <img class="img-fluid p-3 rounded" src="{{ $image->getUrl(400, 300) }}"
+                                    <div class=" d-flex justify-content-center">
+                                        <img class="img-fluid p-3 rounded-5" src="{{ $image->getUrl(400, 300) }}"
                                         alt="">
-                                    <div class="col-6 d-flex">
-                                        <h5 class="tc-accent">Revisione immagini</h5>
-                                        <div class="card-body d-flex align-items-center flex-wrap gap-3">
+                                    </div>
+                                    
+                                        <h5 class="tc-accent text-center mt-3 t-b">Revisione immagini</h5>
+                                    <div class=" d-flex">
+                                        
+                                        <div class="card-body d-flex align-items-center justify-content-center flex-wrap gap-md-3 gap-2">
                                             <p>Adulti: <span class="{{ $image->adult }}"></span></p>
                                             <p>Satira: <span class="{{ $image->spoof }}"></span></p>
                                             <p>Medicina: <span class="{{ $image->medical }}"></span></p>
@@ -57,14 +61,14 @@
                                 </div>
                             @endforeach
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        <button class="carousel-control-prev mb-md-3 mb-5" type="button" data-bs-target="#carouselExample"
                             data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon ms-4  mb-5" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        <button class="carousel-control-next mb-md-3 mb-5" type="button" data-bs-target="#carouselExample"
                             data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon me-4  mb-5" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -73,9 +77,9 @@
                 @endif
             </div>
         </div>
-        <div class="row justify-content-center pb-5">
+        <div class="row justify-content-center ">
             <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-                <h5 class="card-title mt-5 t-b">{{ __('ui.name') }} : {{ $announcementToCheck->name }}</h5>
+                <h5 class="card-title mt-3 t-b">{{ __('ui.name') }} : {{ $announcementToCheck->name }}</h5>
                 <p class="card-text my-2 t-b text-wrap description-box w-50 text-center">
                     {{ __('ui.description') }}:
                     {{ $announcementToCheck->description }}</p>
@@ -83,13 +87,14 @@
                     {{ $announcementToCheck->created_at->format('d/m/Y') }} {{ __('ui.from') }}:
                     {{ Auth::User()->name }} </p>
             </div>
+            
             <div class="col-12 div col-md-5 col-lg-5 text-center">
                 <form action="{{ route('revisor.acceptAnnouncement', ['announcement' => $announcementToCheck]) }}"
                     method="POST">
                     @csrf
                     @method('PATCH')
                     <button type="submit"
-                        class="btn rounded-5 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
+                        class="btn rounded-5 mb-2 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
                 </form>
             </div>
             <div class="col-12 div col-md-5 col-lg-5 text-center">
@@ -107,8 +112,8 @@
 
 
     </div>
-    <div class="container-fluid vh-100 my-5 pt-5">
-        <div class="row justify-content-center my-5">
+    <div class="container-fluid vh-100 ">
+        <div class="row justify-content-center ">
             <div class="col-12 my-5 pt-5 ">
                 <h2 class="text-center t-b fw-semibold fs-1">{{ __('ui.history') }}</h2>
             </div>
