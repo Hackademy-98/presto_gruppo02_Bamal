@@ -260,12 +260,14 @@ input {
 
 .box_categories {
     height: 3rem;
-    width: 8rem;
+    width: 9rem !important;
+    
 }
 
 .btn-custom {
     color: rgb(229, 62, 2);
     background-color: #ffe8c7;
+   
 }
 .btn-custom:hover {
     background-color: var(--o);

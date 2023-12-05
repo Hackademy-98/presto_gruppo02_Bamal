@@ -18,15 +18,15 @@
     </section>
 
     {{-- CATEGORIE   --}}
-    <section class="container-fluid min-wh-100">
+    <section class="container-fluid min-wh-100 ">
 
-        <article class="row w-100 justify-content-center mb-5">
+        <article class="row justify-content-center mb-5">
             <h2 class="text-center t-b mb-5">{{ __('ui.categories') }}</h2>
             {{-- <div class="col-12 d-flex justify-content-center mb-5 mt-4 gap-3"> --}}
             @foreach ($categories as $category)
-                <div class="col-3 gap-3 flex-wrap d-flex col-md-1 rounded-5 justify-content-center">
+                <div class="col-3 p-0 ms-3  gap-md-3 gap-2 flex-wrap d-flex col-md-1 rounded-5 justify-content-center">
                     <div class="m-0">
-                        <i class="fa-solid icone t-o fs-2 fa-{{ __("ui.$category->id") }}"></i>
+                        <i class="fa-solid icone t-o fs-2 mt-md-0 mt-3 fa-{{ __("ui.$category->id") }}"></i>
                     </div>
                     <a class="box_categories btn btn-custom rounded-5 d-flex justify-content-center align-items-center"
                         href="{{ route('products.filterByCategory', compact('category')) }}">{{ __("ui.$category->name") }}</a>
