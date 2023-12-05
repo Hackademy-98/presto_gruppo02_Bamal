@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="container-fluid sfondoAnnunci">
-        <div class="row justify-content-center pt-5">
+    <section class="container-fluid sfondoAnnunci">
+        <article class="row justify-content-center pt-5">
             <div class="col col-12 mt-5 text-center">
                 <h2 class="text-center mt-5 pt-3 t-o fs-1 ">{{ __('ui.allAnnouncements') }}</h2>
             </div>
@@ -13,30 +13,30 @@
                         type="submit">{{ __('ui.search') }}</button>
                 </form>
             </div>
-        </div>
+        </article>
 
-    </div>
+    </section>
 
     {{-- CATEGORIE   --}}
-    <div class="container-fluid min-wh-100">
+    <section class="container-fluid min-wh-100">
 
-        <div class="row w-100 justify-content-center mb-5">
+        <article class="row w-100 justify-content-center mb-5">
             <h2 class="text-center t-b mb-5">{{ __('ui.categories') }}</h2>
             {{-- <div class="col-12 d-flex justify-content-center mb-5 mt-4 gap-3"> --}}
-                @foreach ($categories as $category)
-                    <div class="col-3 gap-3 flex-wrap d-flex col-md-1 rounded-5 justify-content-center">
-                        <div class="m-0">
-                            <i class="fa-solid icone t-o fs-2 fa-{{ __("ui.$category->id") }}"></i>
-                        </div>
-                        <a class="box_categories btn btn-custom rounded-5 d-flex justify-content-center align-items-center"
-                            href="{{ route('products.filterByCategory', compact('category')) }}">{{ __("ui.$category->name") }}</a>
+            @foreach ($categories as $category)
+                <div class="col-3 gap-3 flex-wrap d-flex col-md-1 rounded-5 justify-content-center">
+                    <div class="m-0">
+                        <i class="fa-solid icone t-o fs-2 fa-{{ __("ui.$category->id") }}"></i>
                     </div>
-                @endforeach
+                    <a class="box_categories btn btn-custom rounded-5 d-flex justify-content-center align-items-center"
+                        href="{{ route('products.filterByCategory', compact('category')) }}">{{ __("ui.$category->name") }}</a>
+                </div>
+            @endforeach
             {{-- </div> --}}
-        </div>
+        </article>
 
         {{-- PRODOTTI --}}
-        <div class="row mt-3">
+        <article class="row mt-3">
             <div class="col-12 flex-wrap d-flex gap-4 justify-content-center">
                 @forelse ($products as $product)
                     <x-card :product='$product' :category='$product->category' />
@@ -49,17 +49,17 @@
                 @endforelse
 
             </div>
-        </div>
-            
+        </article>
 
-            <div class="container-fluid mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-12 d-flex justify-content-center">
-                        {{ $products->links() }}
-                    </div>
+
+        <article class="container-fluid mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
+                    {{ $products->links() }}
                 </div>
             </div>
-        
+        </article>
+    </section>
 
 
 

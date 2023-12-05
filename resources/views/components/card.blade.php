@@ -1,6 +1,6 @@
 <div class="card card-custom shadow p-3" style="width: 18rem;">
     <img src="{{ !$product->images()->get()->isEmpty()? $product->images()->first()->getUrl(400, 300) : '/media/default.png' }}"
-        class="card-img-top" alt="...">
+        class="card-img-top" alt="Immagine Annuncio">
 
     <div class="card-body p-0">
         <div>

@@ -97,6 +97,15 @@ return [
 '10'=>'wand-magic-sparkles',
 
 //!Error message
-'error404'=>'Errore! Pagina non trovata'
+'error404'=>'Errore! Pagina non trovata',
+
+//!Categorie delle immagini 
+
+'imagesRevision'=>'Revisione dell`immagine',
+'adult'=>'Adulti',
+'spoof'=>'Satira',
+'medical'=>'Medicina',
+'violence'=>'Violenza',
+'racy'=>'Ambiguo',
 
 ];

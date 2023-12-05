@@ -1,7 +1,7 @@
 <x-layout>
 
-    <div class="container-fluid vh-100  sfondoLogin">        
-        <div class="row pt-5 justify-content-center mt-5">
+    <section class="container-fluid vh-100  sfondoLogin">        
+        <article class="row pt-5 justify-content-center mt-5">
             <div class="col-11 col-md-5 card p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 mt-5">
                 <h1 class="pb-3 t-b fw-">{{ __('ui.login') }}</h1>
                 <form action="{{ route('login') }}" method="POST">
@@ -24,12 +24,8 @@
                     
                 </form>               
             </div>
-           {{-- <div class="col-12 ms-5 col-md-4 d-flex align-items-end">
-            <img id="imgSide" class="imgSide" src="/media/at-iso-color.png" alt="">
-
-           </div> --}}
             
-        </div>
-    </div>
+        </article>
+    </section>
 
 </x-layout>

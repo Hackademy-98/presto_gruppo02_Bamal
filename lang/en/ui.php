@@ -76,16 +76,10 @@ return [
     'createAds'=>'Create',
 
     //!Login
-    'login' => 'Login',
-    'emailAddress'=> 'Email address',
     'password'=>'Password',
     'submitLogin'=>'Login',
 
     //!Register
-    'register' => 'Sign in',
-    'username'=>'Username',
-    'emailAddress'=> 'Email address',
-    'password'=>'Password',
     'passwordConfirmation'=>'Password confirmation',
     'submitSignIn'=>'Sign in',
 
@@ -116,7 +110,16 @@ return [
 '10'=>'wand-magic-sparkles',
 
 //!Error message
-'error404'=>'Error! Page not found'
+'error404'=>'Error! Page not found',
+
+//!Categorie delle immagini 
+
+'imagesRevision'=>'Images Revision',
+'adult'=>'Adult',
+'spoof'=>'Spoof',
+'medical'=>'Medical',
+'violence'=>'Violence',
+'racy'=>'Racy',
 
 
 

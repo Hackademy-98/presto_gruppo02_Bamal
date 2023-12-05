@@ -1,7 +1,7 @@
-<div>
 
+<main>
 
-    <div class="container">
+    <section class="container">
         <div class="row pt-5 ">
             <div class="col-12 pt-5">
                 <h1 class="t-b mb-4 mt-4">{{ __('ui.addNewAds') }}</h1>
@@ -18,9 +18,9 @@
                 @endif
             </div>
         </div>
-    </div>
-    <div class="container sfondoCreate min-vh-100">
-        <div class="row w-100">
+    </section>
+    <main class="container sfondoCreate min-vh-100">
+        <section class="row w-100">
             <div class="col-12 p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 col-md-7 mt-3">
 
                 <form wire:submit.prevent="store">
@@ -89,7 +89,8 @@
                                         <div class="col my-3">
                                             <div class="img-preview mx-auto shadow rounded"
                                                 style="background-image: url({{ $image->temporaryUrl() }});"></div>
-                                            <button class="btn btn-danger shadow d-block text-center rounded-5 mt-2 mx-auto"
+                                            <button
+                                                class="btn btn-danger shadow d-block text-center rounded-5 mt-2 mx-auto"
                                                 type="button"
                                                 wire:click="removeImage({{ $key }})">{{ __('ui.cancelButton') }}</button>
                                         </div>
@@ -103,7 +104,8 @@
                         type="submit">{{ __('ui.createAds') }}</button>
                 </form>
             </div>
-        </div>
-    </div>
-</div>
-</div>
+        </section>
+    </main>
+
+
+</main>

@@ -1,7 +1,7 @@
 <x-layout>
 
-    <div class="container sfondoLavora min-vh-100">
-        <div class="row pt-5 mt-5">
+    <section class="container sfondoLavora min-vh-100">
+        <article class="row pt-5 mt-5">
             <h1 class="mt-3 t-b">{{ __('ui.workWithUs') }}!</h1>
             <div class="col-12 p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 col-md-7 mt-3">
 
@@ -35,8 +35,8 @@
                         class="btn bg-o text-white rounded-5 mt-2 btnOrange">{{ __('ui.sendApplication') }}</button>
                 </form>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 
 
 </x-layout>

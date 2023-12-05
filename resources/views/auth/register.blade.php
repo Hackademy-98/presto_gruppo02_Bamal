@@ -1,7 +1,7 @@
 <x-layout>
 
-    <div class="container vh-100 sfondoRegister">
-        <div class="row pt-5 my-5 justify-content-center">
+    <main class="container vh-100 sfondoRegister">
+        <section class="row pt-5 my-5 justify-content-center">
             <div class="col-11 form card p-4 col-md-5 pb-4 rounded-5 mt-4 bg-transparent shadow-lg">
                 <h1 class=" mb-4 t-b ">{{ __('ui.register') }}</h1>
                 <form action="{{ route('register') }}" method="POST">
@@ -37,8 +37,8 @@
                     <button type="submit" class="btn bg-o text-white rounded-5 mt-2 btnOrange">{{ __('ui.submitSignIn') }}</button>
                 </form>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
 
 

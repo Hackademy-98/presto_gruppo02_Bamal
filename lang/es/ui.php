@@ -69,14 +69,11 @@ return [
     'createAds'=>'Crear anuncios',
 
     //!Login
-        'login' => 'Acceso',
-        'emailAddress'=> 'Correo electrónico',
         'password'=>'Contraseña',
         'submit'=>'Entregar',
     
         //!Register        
         'passwordConfirmation'=>'Confirmar Contraseña',
-        'submit'=>'Entregar',
 
     //!Card
         'articleInfo'=>'Información del artículo',
@@ -110,5 +107,14 @@ return [
 '10'=>'wand-magic-sparkles',
 
 //!Error message
-'error404'=>'Error! Página no encontrada'
+'error404'=>'Error! Página no encontrada',
+
+//!Categorie delle immagini 
+
+'imagesRevision'=>'Revision de immagen',
+'adult'=>'Adultos',
+'spoof'=>'Sátira',
+'medical'=>'Medicina',
+'violence'=>'Violencìa',
+'racy'=>'Ambiguo',
 ];

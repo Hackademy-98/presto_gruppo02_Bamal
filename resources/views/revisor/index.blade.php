@@ -1,7 +1,8 @@
 <x-layout>
-    <div class="container-fluid mb-5 pb-5 ">
 
-        <div class="row">
+    <main class="container-fluid mb-5 pb-5 ">
+
+        <section class="row">
             @if (session('success'))
                 <div class="col-12 alert alert-success">
                     <p>{{ $message }}</p>
@@ -15,11 +16,11 @@
                 </h2>
 
             </div>
-        </div>
+        </section>
 
         @if ($announcementToCheck)
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 d-flex justify-content-center">
+            <section class="row justify-content-center">
+                <article class="col-12 col-md-6 d-flex justify-content-center">
                     @if ($announcementToCheck->images->isNotEmpty())
                         <div id="carouselExample" class="carousel slide d-flex">
                             <div class="carousel-inner">
@@ -27,19 +28,21 @@
                                     <div class="carousel-item @if ($loop->first) active @endif">
                                         <div class=" d-flex justify-content-center">
                                             <img class="img-fluid p-3 rounded-5" src="{{ $image->getUrl(400, 300) }}"
-                                                alt="">
+                                                alt="Immagine annuncio">
                                         </div>
 
-                                        <h5 class="tc-accent text-center mt-3 t-b">Revisione immagini</h5>
+                                        <h5 class="tc-accent text-center mt-3 t-b">{{ __('ui.imagesRevision') }}</h5>
                                         <div class=" d-flex">
 
                                             <div
                                                 class="card-body d-flex align-items-center justify-content-center gap-md-3 gap-2">
-                                                <p>Adulti: <span class="{{ $image->adult }}"></span></p>
-                                                <p>Satira: <span class="{{ $image->spoof }}"></span></p>
-                                                <p>Medicina: <span class="{{ $image->medical }}"></span></p>
-                                                <p>Violenza: <span class="{{ $image->violence }}"></span></p>
-                                                <p>Ambiguo: <span class="{{ $image->racy }}"></span></p>
+                                                <p>{{ __('ui.adult') }}: <span class="{{ $image->adult }}"></span></p>
+                                                <p>{{ __('ui.spoof') }}: <span class="{{ $image->spoof }}"></span></p>
+                                                <p>{{ __('ui.medical') }}: <span class="{{ $image->medical }}"></span>
+                                                </p>
+                                                <p>{{ __('ui.violence') }}: <span
+                                                        class="{{ $image->violence }}"></span></p>
+                                                <p>{{ __('ui.racy') }}: <span class="{{ $image->racy }}"></span></p>
                                             </div>
                                         </div>
                                     </div>
@@ -57,10 +60,11 @@
                             </button>
                         </div>
                     @else
-                        <img src="/media/default.png" class="img-fluid w-75 p-3 rounded" alt="...">
+                        <img src="/media/default.png" class="img-fluid w-75 p-3 rounded"
+                            alt="Immagine default dell'annuncio">
                     @endif
-                </div>
-            </div>
+                </article>
+            </section>
             <div class="row justify-content-center ">
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center">
                     <h5 class="card-title mt-3 t-b">{{ __('ui.name') }} : {{ $announcementToCheck->name }}</h5>
@@ -90,22 +94,23 @@
                             class="btn rounded-5 btn-outline-danger w-25 shadow">{{ __('ui.refuseButton') }}</button>
                     </form>
                 </div>
+            </div>
         @endif
-    </div>
+    </main>
 
 
 
-    </div>
-    <div class="container">
-        <div class="row justify-content-center ">
+    
+    <section class="container">
+        <section class="row justify-content-center ">
             <div class="col-12 my-5 pt-5 ">
                 <h2 class="text-center t-b fw-semibold fs-1">{{ __('ui.history') }}</h2>
             </div>
             @foreach ($announcementsChecked as $product)
-                <div class="col-8 col-md-6 col-lg-4 justify-content-center my-3 gap-4">
+                <article class="col-8 col-md-6 col-lg-4 justify-content-center my-3 gap-4">
                     <div class="card card-custom shadow p-3">
                         <img src="{{ !$product->images()->get()->isEmpty()? $product->images()->first()->getUrl(400, 300): '/media/default.png' }}"
-                            class="card-img-top" alt="...">
+                            class="card-img-top" alt="Immagine default dell'annuncio">
 
                         <div class="card-body p-0">
                             <div>
@@ -148,9 +153,9 @@
                             @endif
                         </div>
                     </div>
-                </div>
+                </article>
             @endforeach
-        </div>
+        </section>
         <div class="container-fluid mt-5">
             <div class="row justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
@@ -158,7 +163,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 </x-layout>

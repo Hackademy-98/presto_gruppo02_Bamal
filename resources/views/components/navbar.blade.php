@@ -3,7 +3,7 @@
         <div class="container-fluid gap-2">
 
             <a class="navbar-brand" href="{{ route('home') }}"><img src="/media/LOGO.png" class="logo ms-3"
-                    alt=""></a>
+                    alt="Logo del sito"></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
