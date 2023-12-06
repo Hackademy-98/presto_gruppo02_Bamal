@@ -1,7 +1,7 @@
 <x-layout>
 
     <div class="board d-flex align-items-center">
-        <h1 class="ms-md-5 ps-md-5 board-text h1-board t-o ms-5">{{ __("ui.$category->name") }}</h1>
+        <h1 class="ms-md-5 ps-md-5 board-text t-o ms-5">{{ __("ui.$category->name") }}</h1>
     </div>
     <section class="container-fluid d-flex">
         <div class="row justify-content-center  my-4 w-100">
