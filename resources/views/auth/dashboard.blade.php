@@ -2,7 +2,7 @@
     <div class="container-fluid sfondoDashboard">
         <div class="row justify-content-center pt-5">
             <div class="col col-12 mt-5 text-center">
-                <h1 class="mt-5 pt-4 text-center t-o">{{ __('ui.yourDashboard') }}</h1>
+                <h1 class="mt-5 pt-4 text-center h1-boardDashboard t-o">{{ __('ui.yourDashboard') }}</h1>
             </div>
         </div>
 

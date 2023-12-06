@@ -2,7 +2,7 @@
     <section class="container-fluid sfondoAnnunci">
         <article class="row justify-content-center pt-5">
             <div class="col col-12 mt-5 text-center">
-                <h2 class="text-center mt-5 pt-3 t-o fs-1 ">{{ __('ui.allAnnouncements') }}</h2>
+                <h2 class="text-center  mt-5 pt-3 t-o fs-1 ">{{ __('ui.allAnnouncements') }}</h2>
             </div>
             {{-- SEARCH --}}
             <div class="col-12 col-md-6 mt-4 text-center">
