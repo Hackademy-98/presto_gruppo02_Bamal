@@ -1,6 +1,6 @@
 <x-layout>
 
-    <section class="container-fluid vh-100  sfondoLogin">        
+    <section class="container-fluid vh-100  sfondoLogin">
         <article class="row pt-5 justify-content-center mt-5">
             <div class="col-11 col-md-5 card p-4 bg-transparent pb-5 shadow-lg form rounded-5 mt-4 mt-5">
                 <h1 class="pb-3 t-b fw-">{{ __('ui.login') }}</h1>
@@ -20,13 +20,17 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <p class="t-b">{{ __('ui.youAreNotYetRegistered') }} , <a class="t-o"
+                            href="{{ route('register') }}">{{ __('ui.register') }}</a>
+                    </p>
                     <div class="text-end">
-                    <button type="submit" class="btn mt-2 bg-o rounded-5 text-white btnOrange" id="btnSubmit">{{ __('ui.submitLogin') }}</button>
+                        <button type="submit" class="btn mt-2 bg-o rounded-5 text-white btnOrange"
+                            id="btnSubmit">{{ __('ui.submitLogin') }}</button>
                     </div>
-                    
-                </form>               
+
+                </form>
             </div>
-            
+
         </article>
     </section>
 

@@ -40,6 +40,16 @@
     font-family: "Russo One", sans-serif;
     font-size: 14vh;
 }
+@media screen and (max-width: 768px){
+    .h1-home {
+        font-size: 10vh;
+    }
+}
+@media screen and (min-width: 769) and (max-width: 1366px){
+    .h1-home {
+        font-size: 12vh;
+    }
+}
 .h1-board{
     font-size: 70px !important;
 }
@@ -773,3 +783,6 @@ input {
     }
 }
 
+.inputCustom{
+    width: 95%;
+}

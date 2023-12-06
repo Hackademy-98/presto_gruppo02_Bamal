@@ -121,6 +121,13 @@ return [
 'violence'=>'Violence',
 'racy'=>'Racy',
 
+'doYouHaveAnAccount'=>'Do you already have an account',
+'youAreNotYetRegistered'=>'You are not yet registered',
+'hello'=>'Hello',
+'word'=>'word',
+'user'=>'user',
+'everyone'=>'everyone'
+
 
 
 

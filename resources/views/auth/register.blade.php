@@ -28,16 +28,22 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label fs-5">{{ __('ui.passwordConfirmation') }}</label>
-                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                        <label for="password_confirmation"
+                            class="form-label fs-5">{{ __('ui.passwordConfirmation') }}</label>
+                        <input type="password" class="form-control" id="password_confirmation"
+                            name="password_confirmation">
                         @error('password_confirmation')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <p class="t-b">{{ __('ui.doYouHaveAnAccount') }} , <a class="t-o"
+                            href="{{ route('login') }}">{{ __('ui.login') }}</a>
+                    </p>
                     <div class="text-end">
-                        <button type="submit" class="btn bg-o text-white rounded-5 mt-2 btnOrange">{{ __('ui.submitSignIn') }}</button>
+                        <button type="submit"
+                            class="btn bg-o text-white rounded-5 mt-2 btnOrange">{{ __('ui.submitSignIn') }}</button>
                     </div>
-                    
+
                 </form>
             </div>
         </section>

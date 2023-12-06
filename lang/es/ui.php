@@ -117,4 +117,11 @@ return [
 'medical'=>'Medicina',
 'violence'=>'Violencìa',
 'racy'=>'Ambiguo',
+
+'doYouHaveAnAccount'=>'Ya tienes una cuenta',
+'youAreNotYetRegistered'=>'Aún no estás registrado',
+'hello'=>'Hola',
+'word'=>'mundo',
+'user'=>'usuario',
+'everyone'=>'a todos'
 ];

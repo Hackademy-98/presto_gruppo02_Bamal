@@ -108,4 +108,12 @@ return [
 'violence'=>'Violenza',
 'racy'=>'Ambiguo',
 
+'doYouHaveAnAccount'=>'Hai già un account',
+'youAreNotYetRegistered'=>'Non sei ancora iscritto',
+'hello'=>'Ciao',
+'word'=>'mondo',
+'user'=>'utente',
+'everyone'=>'a tutti'
+
+
 ];
