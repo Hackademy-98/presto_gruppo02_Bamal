@@ -31,8 +31,11 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
-                    <button type="submit"
+                    <div class="text-end">
+                        <button type="submit"
                         class="btn bg-o text-white rounded-5 mt-2 btnOrange">{{ __('ui.sendApplication') }}</button>
+                    </div>
+                    
                 </form>
             </div>
         </article>

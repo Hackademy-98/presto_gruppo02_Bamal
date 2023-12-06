@@ -76,15 +76,6 @@
                         {{ Auth::User()->name }} </p>
                 </div>
 
-                <div class="col-12 div col-md-5 col-lg-5 text-center">
-                    <form action="{{ route('revisor.acceptAnnouncement', ['announcement' => $announcementToCheck]) }}"
-                        method="POST">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit"
-                            class="btn rounded-5 mb-2 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
-                    </form>
-                </div>
                 <div class="col-12 col-md-5 col-lg-5 text-center">
                     <form action="{{ route('revisor.rejectAnnouncement', ['announcement' => $announcementToCheck]) }}"
                         method="POST">
@@ -92,6 +83,15 @@
                         @method('PATCH')
                         <button type="submit"
                             class="btn rounded-5 btn-outline-danger w-25 shadow">{{ __('ui.refuseButton') }}</button>
+                    </form>
+                </div>
+                <div class="col-12 div col-md-5 col-lg-5 text-center">
+                    <form action="{{ route('revisor.acceptAnnouncement', ['announcement' => $announcementToCheck]) }}"
+                        method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit"
+                            class="btn rounded-5 mb-2 btn-outline-success w-25 shadow">{{ __('ui.acceptButton') }}</button>
                     </form>
                 </div>
             </div>
@@ -102,7 +102,7 @@
 
     
     <section class="container">
-        <section class="row justify-content-center ">
+        <div class="row justify-content-center ">
             <div class="col-12 my-5 pt-5 ">
                 <h2 class="text-center t-b fw-semibold fs-1">{{ __('ui.history') }}</h2>
             </div>
@@ -135,6 +135,12 @@
                                 </div>
                             @else
                                 <div class="d-flex justify-content-around">
+                                    <form action="{{ route('products.destroy', compact('product')) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit"
+                                            class="btn rounded-5 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
+                                    </form>
                                     <form
                                         action="{{ route('revisor.acceptAnnouncement', ['announcement' => $product]) }}"
                                         method="POST">
@@ -143,19 +149,13 @@
                                         <button type="submit"
                                             class="btn rounded-5 btn-outline-success shadow">{{ __('ui.acceptButton') }}</button>
                                     </form>
-                                    <form action="{{ route('products.destroy', compact('product')) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit"
-                                            class="btn rounded-5 btn-outline-danger shadow">{{ __('ui.cancelButton') }}</button>
-                                    </form>
                                 </div>
                             @endif
                         </div>
                     </div>
                 </article>
             @endforeach
-        </section>
+        </div>
         <div class="container-fluid mt-5">
             <div class="row justify-content-center">
                 <div class="col-12 d-flex justify-content-center">

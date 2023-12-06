@@ -10,7 +10,10 @@
                 href="{{ route('products.filterByCategory', ['category'=> $product->category]) }}">{{ __('ui.' . $product->category->name) }}</a>
         </p>
         <p class="text-title fs-6">€{{ $product->price }}</p>
-        <a href="{{ route('products.show', compact('product')) }}"
-            class="btn btnBlu bg-b rounded-5 t-n">{{ __('ui.detailButton') }}</a>
+        <div class="text-end">
+
+            <a href="{{ route('products.show', compact('product')) }}"
+                class="btn btnBlu bg-b rounded-5 t-n">{{ __('ui.detailButton') }}</a>
+        </div>
     </div>
 </div>

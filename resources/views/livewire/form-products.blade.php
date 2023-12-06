@@ -100,8 +100,11 @@
                         </div>
 
                     @endif
-                    <button class="btn btnOrange bg-o mt-2 text-white rounded-5"
+                    <div class="text-end">
+                        <button class="btn btnOrange bg-o mt-2 text-white rounded-5"
                         type="submit">{{ __('ui.createAds') }}</button>
+                    </div>
+                 
                 </form>
             </div>
         </section>

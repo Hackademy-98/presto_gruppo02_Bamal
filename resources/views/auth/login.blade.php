@@ -20,7 +20,9 @@
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
+                    <div class="text-end">
                     <button type="submit" class="btn mt-2 bg-o rounded-5 text-white btnOrange" id="btnSubmit">{{ __('ui.submitLogin') }}</button>
+                    </div>
                     
                 </form>               
             </div>
