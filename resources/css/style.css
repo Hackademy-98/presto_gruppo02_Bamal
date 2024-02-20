@@ -252,10 +252,22 @@ input {
     rgba(248, 249, 250, 0) 21%
     ),
     url("/public/media/sfondoHeader.png");
-    background-position: right;
+    background-position: center;
     overflow: hidden;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .sfondoHeader {
+        background-position-y: 32rem;
+        background-position-x: -4rem;
+    }
+}
+@media (min-width: 769px) and (max-width: 1366px) {
+    .sfondoHeader {
+        background-position: bottom;
+    }
 }
 
 .btnOrange:hover {

@@ -35,11 +35,16 @@ class UserController extends Controller
     }
 
     public function makeRevisor(User $user){
+        if (Auth::user()) {
         if(Auth::user()->email == 'admin@admin'){
             Artisan::call('presto:makeUserRevisor',['email'=>$user->email]);
             return redirect()->route('home')->with('message', 'l\'utente è diventato revisore');
         } else {
             return redirect()->route('home')->with('error', 'l\'utente non è autorizzato');
         }
+    } else {
+        return redirect()->route('home')->with('error', 'azione non autorizzata');
     }
+}
+
 }

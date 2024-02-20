@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn fs-5 text-white btnOrange rounded-5 bg-o mt-3 ms-4"
+                <a class="btn fs-5 text-white btnOrange rounded-5 bg-o mt-3 ms-md-4"
                     href="{{ route('products.create') }}">{{ __('ui.insertAnnouncement') }}</a>
             </div>
         </article>
